@@ -9,12 +9,12 @@ git pull
 echo "✔ dotfiles are up to date"
 
 # Start ssh-agent and set zsh as default
-ln -sf $(pwd)/zshrc ~/.zshrc
-ln -sf $(pwd)/bashrc ~/.bashrc
+ln -sf $(pwd)/.zshrc ~/.zshrc
+ln -sf $(pwd)/.bashrc ~/.bashrc
 echo "✔ zsh as default shell"
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-ln -sf $(pwd)/gitconfig ~/.gitconfig
+ln -sf $(pwd)/.gitconfig ~/.gitconfig
 echo "✔ .gitconfig symlinked"
