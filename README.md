@@ -21,3 +21,21 @@ My current solution is to configure `~/.ssh/config` as shown in repo/ssh/config 
 
 The terminal lives in windows, and creating symlinks to files in windows can produce ...fascinating headaches.  
 For now this dotfile will have to be manually copied to `/mnt/c/Users/<username>`.
+
+## Resources
+
+###### Official documentation
+- [Windows Subsystem for Linux Documentation](https://msdn.microsoft.com/en-us/commandline/wsl/about)
+
+###### Setup
+- [Bash On Ubuntu On Windows](https://github.com/abergs/ubuntuonwindows)
+- [How to Install zsh and Oh My Zsh in Windows 10](https://www.maketecheasier.com/install-zsh-and-oh-my-zsh-windows10/)
+
+###### Examples
+- [Living inside the updated windows subsystem for linux](https://taoofmac.com/space/blog/2017/05/07/1920)
+- [dotfiles-win](https://github.com/jieverson/dotfiles-win)
+
+###### Odd bits  
+- Symlinks  
+  Interesting work in progress on MS side to make WSL symlinks work fine in both linux and windows
+  [Symlinks on the mounted Windows directories are not compatible with native](https://github.com/Microsoft/WSL/issues/353)

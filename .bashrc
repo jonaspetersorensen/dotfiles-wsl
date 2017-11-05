@@ -2,6 +2,12 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# # # # # # # # # # # # # # # # # # # # # # # #
+#
+#	START SSH AGENT
+#
+#
+
 #!/bin/bash
 # Set up ssh-agent
 SSH_ENV="$HOME/.ssh/environment"
@@ -25,11 +31,31 @@ else
 	start_agent
 fi
 
+# # # # # # # # # # # # # # # # # # # # # # # #
+#
+#	NAVIGATE
+#
+#
+
+cd /mnt/c/Dev/
+
+#
+#
+#	START ZSH
+#
+#
+
 # if running in terminal
 if test -t 1; then
 # ...start zsh
 exec zsh
 fi
+
+# # # # # # # # # # # # # # # # # # # # # # # #
+#
+#	...THE RESTT
+#
+#
 
 # If not running interactively, don't do anything
 case $- in
