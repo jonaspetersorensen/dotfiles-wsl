@@ -35,7 +35,8 @@ For now this dotfile will have to be manually copied to `/mnt/c/Users/<username>
 - [Living inside the updated windows subsystem for linux](https://taoofmac.com/space/blog/2017/05/07/1920)
 - [dotfiles-win](https://github.com/jieverson/dotfiles-win)
 
-###### Odd bits  
-- Symlinks  
-  Interesting work in progress on MS side to make WSL symlinks work fine in both linux and windows  
-  [Symlinks on the mounted Windows directories are not compatible with native](https://github.com/Microsoft/WSL/issues/353)
+## Odd bits  
+
+###### Symlinks  
+Interesting work in progress on MS side to make WSL symlinks work fine in both linux and windows  
+[Symlinks on the mounted Windows directories are not compatible with native](https://github.com/Microsoft/WSL/issues/353)
