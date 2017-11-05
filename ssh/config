@@ -1,0 +1,11 @@
+# To make this work for WSL then you need to 
+# 1. Add hosts as shown below
+# 2. Run "ssh-add path-to-private-key" once for every host you have added to the config
+# After this initial ssh-add then keys should be persisted and you no longer have to run ssh-add every time you restart bash.
+
+Host github.com
+	HostName github.com
+	User git
+	PreferredAuthentications publickey
+	IdentityFile ~/.ssh/your_private_key
+	AddKeysToAgent yes
