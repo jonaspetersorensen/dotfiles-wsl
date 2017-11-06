@@ -18,3 +18,10 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 ln -sf $(pwd)/.gitconfig ~/.gitconfig
 echo "✔ .gitconfig symlinked"
+
+#  install dev tools
+curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+sudo apt -qq install nodejs
+sudo apt -qq install npm
+sudo apt -qq install python-pip
+echo "✔ apt dev tools installed"
