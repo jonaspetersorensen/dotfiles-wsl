@@ -30,6 +30,7 @@ For now this dotfile will have to be manually copied to `/mnt/c/Users/<username>
 ###### Setup
 - [Bash On Ubuntu On Windows](https://github.com/abergs/ubuntuonwindows)
 - [How to Install zsh and Oh My Zsh in Windows 10](https://www.maketecheasier.com/install-zsh-and-oh-my-zsh-windows10/)
+- [Guide - Developing on Windows 10 using WSL](https://discourse.roots.io/t/guide-developing-on-windows-10-using-wsl/9380)
 
 ###### Examples
 - [Living inside the updated windows subsystem for linux](https://taoofmac.com/space/blog/2017/05/07/1920)
