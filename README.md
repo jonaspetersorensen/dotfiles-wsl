@@ -26,6 +26,7 @@ For now this dotfile will have to be manually copied to `/mnt/c/Users/<username>
 
 ###### Official documentation
 - [Windows Subsystem for Linux Documentation](https://msdn.microsoft.com/en-us/commandline/wsl/about)
+- [Microsoft/WSL git repo](https://github.com/Microsoft/WSL/) - MS is fairly active in answering issues and providing workarounds when possible until fix is available
 
 ###### Setup
 - [Bash On Ubuntu On Windows](https://github.com/abergs/ubuntuonwindows)
