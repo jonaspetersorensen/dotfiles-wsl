@@ -40,3 +40,7 @@ For now this dotfile will have to be manually copied to `/mnt/c/Users/<username>
 ###### Symlinks  
 Interesting work in progress on MS side to make WSL symlinks work fine in both linux and windows  
 [Symlinks on the mounted Windows directories are not compatible with native](https://github.com/Microsoft/WSL/issues/353)
+
+##### Yarn install fail  
+Fix is working its way thru the windows update release process,
+[`yarn install` fails inside /mnt with EINVAL for lstat during step 3](https://github.com/Microsoft/WSL/issues/2448#issuecomment-342224944)
