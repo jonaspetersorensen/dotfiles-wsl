@@ -1,61 +1,40 @@
-# Log text separator
-read -d '' separator <<- EOF
-
-
-EOF
+. $(dirname "$0")/scripts/colors.lib
+. $(dirname "$0")/scripts/common.lib
 
 # Start work
-echo "$separator"
-echo "Run apt update, upgrade and remove..."
-echo "$separator"
+printStart "Run apt update, upgrade and remove..."
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
 sudo apt autoremove
-echo "$separator"
-echo "✔ apt work done!"
-echo "$separator"
+printEnd "✔ apt work done!"
 
-echo "Checking base packages..."
-echo "$separator"
+printStart "Checking base packages..."
 sudo apt -qq install zsh git
-echo "$separator"
-echo "✔ base packages are installed"
-echo "$separator"
+printEnd "✔ base packages are installed"
 
-echo "Checking dotfiles source..."
-echo "$separator"
+printStart "Checking dotfiles source..."
 git pull
-echo "$separator"
-echo "✔ dotfiles source is up to date"
-echo "$separator"
+printEnd "✔ dotfiles source is up to date"
 
 # Start ssh-agent and set zsh as default
-echo "Checking shell..."
-echo "$separator"
+printStart "Checking shell..."
 ln -sf $(pwd)/.zshrc ~/.zshrc
 ln -sf $(pwd)/.bashrc ~/.bashrc
-echo "✔ zsh as default shell"
-echo "$separator"
+printEnd "✔ zsh as default shell"
 
 # Install oh-my-zsh
-echo "Checking oh-my-zsh..."
-echo "$separator"
+printStart "Checking oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-echo "$separator"
-echo "✔ oh-my-zsh installed"
-echo "$separator"
+printEnd "✔ oh-my-zsh installed"
 
 # Configure git
-echo "Checking git..."
+printStart "Checking git..."
 ln -sf $(pwd)/.gitconfig ~/.gitconfig
-echo "✔ .gitconfig symlinked"
-echo "$separator"
+printEnd "✔ .gitconfig symlinked"
 
 # install dev tools
-echo "$separator"
-echo "Checking dev tools..."
-echo "$separator"
+printStart "Checking dev tools..."
 # first install nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
 # then start it
@@ -67,14 +46,10 @@ nvm --version
 nvm install --lts=carbon
 nvm use --lts=carbon
 nvm alias default lts/carbon
-echo "$separator"
-echo "✔ dev tools installed"
-echo "$separator"
+printEnd "✔ dev tools installed"
 
 # Install npm tools"
-echo "Checking npm dev tools..."
-echo "$separator"
+printStart "Checking npm dev tools..."
 npm install -g yo less yarn
-echo "$separator"
-echo "✔ npm -g dev tools installed"
-echo "$separator"
+printEnd "✔ npm -g dev tools installed"
+

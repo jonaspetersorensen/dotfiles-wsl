@@ -33,6 +33,7 @@ For now this dotfile will have to be manually copied to `/mnt/c/Users/<username>
 - [Bash On Ubuntu On Windows](https://github.com/abergs/ubuntuonwindows)
 - [How to Install zsh and Oh My Zsh in Windows 10](https://www.maketecheasier.com/install-zsh-and-oh-my-zsh-windows10/)
 - [Guide - Developing on Windows 10 using WSL](https://discourse.roots.io/t/guide-developing-on-windows-10-using-wsl/9380)
+- [Shell Scripting Tutorial](https://www.shellscript.sh)
 
 ###### Examples
 - [Living inside the updated windows subsystem for linux](https://taoofmac.com/space/blog/2017/05/07/1920)
@@ -45,5 +46,5 @@ Interesting work in progress on MS side to make WSL symlinks work fine in both l
 [Symlinks on the mounted Windows directories are not compatible with native](https://github.com/Microsoft/WSL/issues/353)
 
 ###### Yarn install fail  
-Fix is working its way thru the windows update release process,
+Fix is working its way thru the windows update release process, see comments for workaround,
 [`yarn install` fails inside /mnt with EINVAL for lstat during step 3](https://github.com/Microsoft/WSL/issues/2448#issuecomment-342224944)
