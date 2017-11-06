@@ -4,6 +4,22 @@
 
 # # # # # # # # # # # # # # # # # # # # # # # #
 #
+#	Workaround for "yarn install" breaking,
+#	https://github.com/Microsoft/WSL/issues/2448#issuecomment-342268888
+#
+#	TO BE REMOVED WHEN FIX IS RELEASED - this will hamper performance
+
+if ! mount | grep -q "C: on /mnt/c type drvfs (rw,noatime,fallback=1)"; then
+        echo "== Remount of C: drive required =="
+        pushd ~ > /dev/null
+        sudo umount /mnt/c
+        sudo mount -t drvfs -o noatime,fallback=1 C: /mnt/c
+        popd > /dev/null
+fi
+
+
+# # # # # # # # # # # # # # # # # # # # # # # #
+#
 #	START SSH AGENT
 #
 #
