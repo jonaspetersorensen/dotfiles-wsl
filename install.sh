@@ -19,8 +19,8 @@ printEnd "✔ dotfiles source is up to date"
 
 # Start ssh-agent and set zsh as default
 printStart "Checking shell..."
-ln -sf $(pwd)/.zshrc ~/.zshrc
-ln -sf $(pwd)/.bashrc ~/.bashrc
+ln -sf $(dirname "$0")/.zshrc ~/.zshrc
+ln -sf $(dirname "$0")/.bashrc ~/.bashrc
 printEnd "✔ zsh as default shell"
 
 # Install oh-my-zsh
@@ -30,7 +30,7 @@ printEnd "✔ oh-my-zsh installed"
 
 # Configure git
 printStart "Checking git..."
-ln -sf $(pwd)/.gitconfig ~/.gitconfig
+ln -sf $(dirname "$0")/.gitconfig ~/.gitconfig
 printEnd "✔ .gitconfig symlinked"
 
 # install dev tools
@@ -52,4 +52,3 @@ printEnd "✔ dev tools installed"
 printStart "Checking npm dev tools..."
 npm install -g yo less yarn
 printEnd "✔ npm -g dev tools installed"
-
