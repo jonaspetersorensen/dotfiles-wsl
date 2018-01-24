@@ -19,8 +19,8 @@ printEnd "✔ dotfiles source is up to date"
 
 # Start ssh-agent and set zsh as default
 printStart "Checking shell..."
-ln -s -f $(dirname "$0")/.zshrc ~/.zshrc
-ln -s -f $(dirname "$0")/.bashrc ~/.bashrc
+ln -sf $(dirname "$0")/.zshrc ~/.zshrc
+ln -sf $(dirname "$0")/.bashrc ~/.bashrc
 printEnd "✔ zsh as default shell"
 
 # Install oh-my-zsh
@@ -30,7 +30,7 @@ printEnd "✔ oh-my-zsh installed"
 
 # Configure git
 printStart "Checking git..."
-ln -s -f $(dirname "$0")/.gitconfig ~/.gitconfig
+ln -sf .gitconfig ~/.gitconfig
 printEnd "✔ .gitconfig symlinked"
 
 # install dev tools
