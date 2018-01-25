@@ -1,5 +1,6 @@
-. $(dirname "$0")/scripts/colors.lib
-. $(dirname "$0")/scripts/common.lib
+DIR="${BASH_SOURCE%/*}"
+if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+. "$DIR/scripts/common.lib"
 
 # Start work
 printStart "Run apt update, upgrade and remove..."
@@ -32,6 +33,11 @@ printEnd "✔ oh-my-zsh installed"
 printStart "Checking git..."
 ln -sf .gitconfig ~/.gitconfig
 printEnd "✔ .gitconfig symlinked"
+
+# Configure custom bin folder
+printStart "Checking bin folder..."
+[ -d ~/bin ] || mkdir ~/bin
+printEnd "✔ bin folder ok."
 
 # install dev tools
 printStart "Checking dev tools..."

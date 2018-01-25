@@ -1,4 +1,6 @@
-. $(dirname "$0")/colors.lib
+DIR="${BASH_SOURCE%/*}"
+if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
+. "$DIR/colors.lib"
 
 # Log text separator
 read -d '' separator <<- EOF
