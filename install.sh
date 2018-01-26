@@ -15,6 +15,11 @@ printStart "Checking base packages..."
 sudo apt -qq install zsh git
 printEnd "✔ base packages are installed"
 
+# Configure git
+printStart "Checking git..."
+ln -sf "$DIR/.gitconfig" ~/.gitconfig
+printEnd "✔ .gitconfig symlinked"
+
 printStart "Checking dotfiles source..."
 git pull
 printEnd "✔ dotfiles source is up to date"
@@ -30,10 +35,14 @@ printStart "Checking oh-my-zsh..."
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 printEnd "✔ oh-my-zsh installed"
 
-# Configure git
-printStart "Checking git..."
-ln -sf "$DIR/.gitconfig" ~/.gitconfig
-printEnd "✔ .gitconfig symlinked"
+# Install oh-my-zsh plugins
+printStart "Checking oh-my-zsh plugins..."
+# Update dircolors
+[ -d ~/.oh-my-zsh/custom/plugins/zsh-dircolors-solarized ] && rm -rf ~/.oh-my-zsh/custom/plugins/zsh-dircolors-solarized
+git clone --recursive git://github.com/joel-porquet/zsh-dircolors-solarized ~/.oh-my-zsh/custom/plugins/zsh-dircolors-solarized
+ln -sf "$DIR/.zsh-dircolors.config" ~/.zsh-dircolors.config
+# dircolors done
+printEnd "✔ oh-my-zsh plugins installed"
 
 # Configure custom bin folder
 printStart "Checking bin folder..."
