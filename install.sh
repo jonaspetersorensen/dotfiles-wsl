@@ -1,6 +1,7 @@
-DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
-. "$DIR/scripts/common.lib"
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+. "${DIR}/scripts/colors.lib"
+. "${DIR}/scripts/common.lib"
 
 # Start work
 printStart "Run apt update, upgrade and remove..."
@@ -20,8 +21,8 @@ printEnd "✔ dotfiles source is up to date"
 
 # Start ssh-agent and set zsh as default
 printStart "Checking shell..."
-ln -sf $(dirname "$0")/.zshrc ~/.zshrc
-ln -sf $(dirname "$0")/.bashrc ~/.bashrc
+ln -sf "$DIR/.zshrc" ~/.zshrc
+ln -sf "$DIR/.bashrc" ~/.bashrc
 printEnd "✔ zsh as default shell"
 
 # Install oh-my-zsh
@@ -31,7 +32,7 @@ printEnd "✔ oh-my-zsh installed"
 
 # Configure git
 printStart "Checking git..."
-ln -sf .gitconfig ~/.gitconfig
+ln -sf "$DIR/.gitconfig" ~/.gitconfig
 printEnd "✔ .gitconfig symlinked"
 
 # Configure custom bin folder
@@ -58,3 +59,7 @@ printEnd "✔ dev tools installed"
 printStart "Checking npm dev tools..."
 npm install -g yo less yarn
 printEnd "✔ npm -g dev tools installed"
+
+
+# End work
+printEnd "Please restart your session to activate changes"

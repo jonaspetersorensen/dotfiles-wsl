@@ -1,7 +1,3 @@
-DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "$DIR" ]]; then DIR="$PWD"; fi
-. "$DIR/colors.lib"
-
 # Log text separator
 read -d '' separator <<- EOF
 
@@ -13,7 +9,7 @@ printMessage()
   text=$1
   echo "$separator"
   echo -e "${White}-----------------------------------------------${Color_Off}"
-  echo -e "$text"
+  echo -e "   $text"
   echo -e "${White}-----------------------------------------------${Color_Off}"
   echo "$separator"
 }

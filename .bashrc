@@ -39,21 +39,10 @@ fi
 
 cd /mnt/c/Dev/
 
-#
-#
-#	START ZSH
-#
-#
-
-# if running in terminal
-if test -t 1; then
-# ...start zsh
-exec zsh
-fi
 
 # # # # # # # # # # # # # # # # # # # # # # # #
 #
-#	...THE RESTT
+#	...THE REST
 #
 #
 
@@ -173,3 +162,16 @@ fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# # # # # # # # # # # # # # # # # # # # # # # 
+#
+#
+#	START ZSH
+#
+#
+
+# if running in terminal
+if test -t 1; then
+# ...start zsh
+exec zsh
+fi
