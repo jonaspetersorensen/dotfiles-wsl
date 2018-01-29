@@ -12,7 +12,7 @@ sudo apt autoremove
 printEnd "✔ apt work done!"
 
 printStart "Checking base packages..."
-sudo apt -qq install zsh git python-pip
+sudo apt -qq install zsh git
 printEnd "✔ base packages are installed"
 
 # Configure git
@@ -51,8 +51,8 @@ printEnd "✔ bin folder ok."
 
 # Install python modules
 printStart "Checking python modules..."
-pip install --upgrade pip
-pip install adal
+sudo apt-get -y install python3-pip
+pip3 install --upgrade pip
 printEnd "✔ python modules ok."
 
 # install dev tools
