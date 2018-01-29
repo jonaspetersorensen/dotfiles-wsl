@@ -15,6 +15,9 @@ if [ -r ~/.nvm ]; then
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 fi
 
+# Start completion system
+autoload bashcompinit && bashcompinit
+
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
