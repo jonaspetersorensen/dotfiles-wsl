@@ -26,9 +26,11 @@ printEnd "✔ dotfiles source is up to date"
 
 # Start ssh-agent and set zsh as default
 printStart "Checking shell..."
+# Add custom bash completion list (zsh will run it in .zshrc)
+[ ! -f ~/.completion_list ] && touch ~/.completion_list 
 ln -sf "$DIR/.zshrc" ~/.zshrc
 ln -sf "$DIR/.bashrc" ~/.bashrc
-printEnd "✔ zsh as default shell"
+printEnd "✔ zsh as default shell, releveant dotfiles symlinked"
 
 # Install oh-my-zsh
 printStart "Checking oh-my-zsh..."

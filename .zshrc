@@ -17,6 +17,8 @@ fi
 
 # Start completion system
 autoload bashcompinit && bashcompinit
+# Load user specific complete list
+. ~/.completion_list
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
