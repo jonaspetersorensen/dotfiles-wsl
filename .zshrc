@@ -1,6 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Docker - set default host to be Docker on Windows
+export DOCKER_HOST=localhost:2375
+
 # Path to your oh-my-zsh installation.
 export ZSH=/home/wonderlove/.oh-my-zsh
 
