@@ -12,7 +12,8 @@ sudo apt autoremove
 printEnd "✔ apt work done!"
 
 printStart "Checking base packages..."
-sudo apt -qq install zsh git
+# TODO: move zsh into separate install script
+sudo apt -qq install zsh git wget tar xz-utils gzip p7zip-full
 printEnd "✔ base packages are installed"
 
 # Configure git
