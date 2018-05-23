@@ -74,6 +74,8 @@ autoload bashcompinit && bashcompinit
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-dircolors-solarized)
 
+ZSH_DISABLE_COMPFIX=true
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
