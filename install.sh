@@ -13,7 +13,7 @@ printEnd "✔ apt work done!"
 
 printStart "Checking base packages..."
 # TODO: move zsh into separate install script
-sudo apt -qq install zsh git wget tar xz-utils gzip p7zip-full
+sudo apt -qq install zsh git wget tar xz-utils gzip p7zip-full unzip
 printEnd "✔ base packages are installed"
 
 # Configure git
