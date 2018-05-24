@@ -112,7 +112,8 @@ export PATH="/home/wonderlove/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# Add docker aliases and functions
+alias docker-clean-unused='docker system prune --all --force --volumes'
+alias docker-clean-all='docker container stop $(docker container ls -a -q) && docker system prune -a -f --volumes'
 
 export PATH=$PATH:/home/wonderlove/bin
-
-source '/home/wonderlove/lib/azure-cli/az.completion'
