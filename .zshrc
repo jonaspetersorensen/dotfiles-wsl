@@ -114,6 +114,7 @@ eval "$(pyenv virtualenv-init -)"
 
 # Add docker aliases and functions
 alias docker-clean-unused='docker system prune --all --force --volumes'
+alias docker-clean-all-containers='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 alias docker-clean-all='docker container stop $(docker container ls -a -q) && docker system prune -a -f --volumes'
 
 export PATH=$PATH:/home/wonderlove/bin
