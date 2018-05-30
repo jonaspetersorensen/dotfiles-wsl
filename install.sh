@@ -5,6 +5,8 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Start work
 printStart "Run apt update, upgrade and remove..."
+# Add git-core so we can get the latest git version
+sudo add-apt-repository ppa:git-core/ppa
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
