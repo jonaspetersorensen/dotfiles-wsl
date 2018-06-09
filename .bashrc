@@ -32,20 +32,6 @@ else
 fi
 
 
-# # # # # # # # # # # # # # # # # # # # # # # 
-#
-#
-#	START ZSH
-#
-#
-
-# if running in terminal
-if test -t 1; then
-# ...start zsh
-exec zsh
-fi
-
-
 
 # # # # # # # # # # # # # # # # # # # # # # # #
 #
@@ -67,6 +53,21 @@ case $- in
     *i*) ;;
       *) return;;
 esac
+
+
+# # # # # # # # # # # # # # # # # # # # # # # 
+#
+#
+#	START ZSH
+#
+#
+
+# if running in terminal
+if test -t 1; then
+# ...start zsh
+exec zsh
+fi
+
 
 
 # don't put duplicate lines or lines starting with space in the history.
