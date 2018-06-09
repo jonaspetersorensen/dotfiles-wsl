@@ -31,6 +31,22 @@ else
 	start_agent
 fi
 
+
+# # # # # # # # # # # # # # # # # # # # # # # 
+#
+#
+#	START ZSH
+#
+#
+
+# if running in terminal
+if test -t 1; then
+# ...start zsh
+exec zsh
+fi
+
+
+
 # # # # # # # # # # # # # # # # # # # # # # # #
 #
 #	NAVIGATE
@@ -51,6 +67,7 @@ case $- in
     *i*) ;;
       *) return;;
 esac
+
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -163,16 +180,4 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# # # # # # # # # # # # # # # # # # # # # # # 
-#
-#
-#	START ZSH
-#
-#
-
-# if running in terminal
-if test -t 1; then
-# ...start zsh
-exec zsh
-fi
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
