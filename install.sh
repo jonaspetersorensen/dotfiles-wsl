@@ -34,6 +34,7 @@ printStart "Checking shell..."
 ln -sf "$DIR/.completion_list" ~/.completion_list
 ln -sf "$DIR/.zshrc" ~/.zshrc
 ln -sf "$DIR/.bashrc" ~/.bashrc
+ln -sf "$DIR/.nanorc" ~/.nanorc
 printEnd "✔ zsh as default shell, releveant dotfiles symlinked"
 
 # Install oh-my-zsh
@@ -51,7 +52,7 @@ ln -sf "$DIR/.zsh-dircolors.config" ~/.zsh-dircolors.config
 printEnd "✔ oh-my-zsh plugins installed"
 
 # Configure custom bin folder
-printStart "Checking bin folder..."
+printStart "Checking ~/bin folder..."
 [ -d ~/bin ] || mkdir ~/bin
 printEnd "✔ bin folder ok."
 
