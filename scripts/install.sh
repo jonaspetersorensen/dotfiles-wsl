@@ -24,7 +24,7 @@ function install::run()
 	repoPath="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/../"
 
 	step="Step 1"
-    	ui::print::section_start "${step}: Refresh packages - In progress..."
+    ui::print::section_start "${step}: Refresh packages - In progress..."
 	sudo add-apt-repository ppa:git-core/ppa
 	sudo apt-get -y update
 	sudo apt-get -y upgrade
@@ -34,15 +34,15 @@ function install::run()
 
 
 	step="Step 2"
-        ui::print::section_start "${step}: Install base utils - In progress..."
+    ui::print::section_start "${step}: Install base utils - In progress..."
 	sudo apt -qq install git wget tar xz-utils gzip p7zip-full unzip
-       	ui::print::section_end "${step}: Done!"
+    ui::print::section_end "${step}: Done!"
 
 
 	step="Step 3"
-       	ui::print::section_start "${step}: Install zsh - In progress..."
+    ui::print::section_start "${step}: Install zsh - In progress..."
 	if [ ! -e ~/.zshrc ]; then
-		sudo apt-get install zsh
+	    sudo apt-get install zsh
 		ui::print::highlight "Installation done. Restart your session, then run install again to continue."
 		exit 0
 	else
@@ -55,15 +55,15 @@ function install::run()
 		echo "A pretty oh-my-zsh requires powerline fonts - installing..."
 		sudo apt install fonts-powerline
 		ui::print::highlight "Installation done. Restart your session, then run install again to continue."
-                exit 0
+        exit 0
 	else
 		echo "oh-my-zsh allready installed."
 	fi
-        ui::print::section_end "${step}: Done!"
+    ui::print::section_end "${step}: Done!"
 
 
 	step="Step 4"
-        ui::print::section_start "${step}: Installing python stuff - In progress..."
+    ui::print::section_start "${step}: Installing python stuff - In progress..."
 	sudo apt-get -y install python3-pip
 	pip3 install --upgrade pip
 	pip3 install virtualenv --user
@@ -71,8 +71,8 @@ function install::run()
 
 
 	step="Step 5"
-        ui::print::section_start "${step}: Installing javascript dev tooling - In progress..."
-        
+    ui::print::section_start "${step}: Installing javascript dev tooling - In progress..."
+    
 	# first install nvm
 	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 	# then start it
@@ -88,48 +88,51 @@ function install::run()
 	
 	# Install npm tools"
 	npm install -g yo less yarn
-        ui::print::section_end "${step}: Done!"
+    ui::print::section_end "${step}: Done!"
 
+    
 	step="Step 6"
-        ui::print::section_start "${step}: Install golang - In progress..."
-        golang::install
-        ui::print:section_end "${step}: Done!"
+    ui::print::section_start "${step}: Install golang - In progress..."
+    golang::install
+    ui::print:section_end "${step}: Done!"
 
 
 	step="Step 7"
-        ui::print::section_start "${step}: Install az cli and related tooling - In progress..."
-        pip install azure-cli
-	az aks install-cl
-        ui::print::section_end "${step}: Done!"
+    ui::print::section_start "${step}: Install az cli and related tooling - In progress..."
+    pip install azure-cli
+	az aks install-cli
+    ui::print::section_end "${step}: Done!"
 
 	
-	step="Step 8"
-        ui::print::section_start "${step}: Install az cli and related tooling - In progress..."
-        pip install azure-cli
-        az aks install-cl
-        ui::print::section_end "${step}: Done!"
+    step="Step 8"
+    ui::print::section_start "${step}: Install kubernetes tooling - In progress..."
+    echo "Installing kubectl ${KUBE_LATEST_VERSION}"
+    wget -q https://storage.googleapis.com/kubernetes-release/release/${KUBE_LATEST_VERSION}/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl
+    chmod +x /usr/local/bin/kubectl
+    
+    echo "Installing helm ${HELM_VERSION}"
+    wget -q http://storage.googleapis.com/kubernetes-helm/helm-${HELM_VERSION}-linux-amd64.tar.gz -O - | tar -xzO linux-amd64/helm > /usr/local/bin/helm
+    ui::print:section_end "${step}: Done!"    
 
 
 	step="Step 9"
-        ui::print::section_start "${step}: Install kubectl - In progress..."
-        wget -q https://storage.googleapis.com/kubernetes-release/release/${KUBE_LATEST_VERSION}/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl \
-    		&& chmod +x /usr/local/bin/kubectl \
-    		&& wget -q http://storage.googleapis.com/kubernetes-helm/helm-${HELM_VERSION}-linux-amd64.tar.gz -O - | tar -xzO linux-amd64/helm > /usr/local/bin/helm
-        ui::print:section_end "${step}: Done!"
+    ui::print::section_start "${step}: Install az cli and related tooling - In progress..."
+    pip install azure-cli
+    ui::print::section_end "${step}: Done!"
 
 
 	step="Step 10"
-        ui::print::section_start "${step}: Install terraform - In progress..."
-        wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
-    	unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin
+    ui::print::section_start "${step}: Install terraform - In progress..."
+    wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+    unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin
 	rm -f terraform_${TERRAFORM_VERSION}_linux_amd64.zip
-        ui::print::section_end "${step}: Done!"
+    ui::print::section_end "${step}: Done!"
 
 	
 	step="Step 11"
-        ui::print::section_start "${step}: Update - In progress..."
+    ui::print::section_start "${step}: Update - In progress..."
 	update::run
-       	ui::print::section_end "${step}: Done!"
+    ui::print::section_end "${step}: Done!"
 
 }
 
