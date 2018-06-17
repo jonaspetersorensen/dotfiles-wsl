@@ -13,8 +13,8 @@ function update::run()
         local step
         local repoPath
 
-	# Path must be absolute to keep symlinks intact
-        repoPath="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/../"
+	    # Path must be absolute to keep symlinks intact
+        repoPath="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/.. && pwd )"
 
         step="Step 1"
         ui::print::section_start "${step}: Refresh packages - In progress..."
@@ -28,10 +28,13 @@ function update::run()
 
         step="Step 2"
         ui::print::section_start "${step}: Link dotfiles - In progress..."
-        ln -sf "$DIR/.completion_list" ~/.completion_list
-        ln -sf "$DIR/.zshrc" ~/.zshrc
-        ln -sf "$DIR/.bashrc" ~/.bashrc
-        ln -sf "$DIR/.nanorc" ~/.nanorc
+        ln -sf "$repoPath/.completion_list" ~/.completion_list
+        ln -sf "$repoPath/.zshrc" ~/.zshrc
+        ln -sf "$repoPath/.zsh-dircolors.config" ~/.zsh-dircolors.config
+        ln -sf "$repoPath/.bashrc" ~/.bashrc
+        ln -sf "$repoPath/.nanorc" ~/.nanorc
+        ln -sf "$repoPath/.gitconfig" ~/.gitconfig
+        ln -sf "$repoPath/.tmux.conf" ~/.tmux.conf
         ui::print::section_end "${step}: Done!"
 
 }
