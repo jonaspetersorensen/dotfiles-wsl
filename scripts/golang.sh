@@ -1,7 +1,7 @@
 #!bin/bash
 
 
-function install::golang()
+function golang::install()
 {
 	local packageName
 	local binPath
@@ -41,4 +41,4 @@ function install::golang()
 
 
 # Debug
-"$@"
+#"$@"
