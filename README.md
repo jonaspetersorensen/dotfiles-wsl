@@ -42,6 +42,4 @@ For now this dotfile will have to be manually copied to `/mnt/c/Users/<username>
 
 ## Odd bits  
 
-###### Symlinks  
-Interesting work in progress on MS side to make WSL symlinks work fine in both linux and windows  
-[Symlinks on the mounted Windows directories are not compatible with native](https://github.com/Microsoft/WSL/issues/353)
+- Nothing so far :)
