@@ -10,7 +10,7 @@ Then run "please install" to install all I(eh, you?) need for happy development,
 ```bash ~/.dotfiles/please.sh install```
 
 For just a quick update of all dotfiles then run "please update",  
-```bash ~/.dotfiles/please.sh update``
+```bash ~/.dotfiles/please.sh update```
 
   
 ## SSH  
