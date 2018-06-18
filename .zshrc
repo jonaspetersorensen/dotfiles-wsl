@@ -112,7 +112,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Add python stuff
-export PATH="/home/wonderlove/.pyenv/bin:$PATH"
+export PATH="/home/wonderlove/.pyenv/bin:$PATH:/home/wonderlove/.local/bin"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
