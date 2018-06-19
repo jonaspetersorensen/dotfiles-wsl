@@ -64,8 +64,6 @@ function install::run()
 
 	step="Step 4"
     ui::print::section_start "${step}: Installing python stuff - In progress..."
-	sudo apt-get -y install python3-pip
-	pip3 install --upgrade pip
 	pip3 install virtualenv --user
 	ui::print::section_end "${step}: Done!"
 
@@ -99,10 +97,14 @@ function install::run()
 
 	step="Step 7"
     ui::print::section_start "${step}: Install az cli and related tooling - In progress..."
-    pip install azure-cli
-	az aks install-cli
+    AZ_REPO=$(lsb_release -cs)
+        echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
+        sudo tee /etc/apt/sources.list.d/azure-cli.list
+    curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+    sudo apt-get install azure-cli
+    az aks install-cli
     ui::print::section_end "${step}: Done!"
-
+    
 	
     step="Step 8"
     ui::print::section_start "${step}: Install kubernetes tooling - In progress..."
@@ -116,16 +118,6 @@ function install::run()
 
 
 	step="Step 9"
-    ui::print::section_start "${step}: Install az cli and related tooling - In progress..."
-    AZ_REPO=$(lsb_release -cs)
-        echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
-        sudo tee /etc/apt/sources.list.d/azure-cli.list
-    curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-    sudo apt-get install azure-cli    
-    ui::print::section_end "${step}: Done!"
-
-
-	step="Step 10"
     ui::print::section_start "${step}: Install terraform - In progress..."
     wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin
@@ -133,10 +125,8 @@ function install::run()
     ui::print::section_end "${step}: Done!"
 
 	
-	step="Step 11"
-    ui::print::section_start "${step}: Update - In progress..."
+    ui::print::job_end "Installation done. Moving over to updates."
 	update::run
-    ui::print::section_end "${step}: Done!"
 
 }
 
