@@ -35,7 +35,7 @@ function install::run()
 
 	step="Step 2"
     ui::print::section_start "${step}: Install base utils - In progress..."
-	sudo apt -qq install git wget tar xz-utils gzip p7zip-full unzip recode
+	sudo apt -qq install git wget tar xz-utils gzip p7zip-full unzip recode apt-transport-https
     ui::print::section_end "${step}: Done!"
 
 
@@ -117,7 +117,11 @@ function install::run()
 
 	step="Step 9"
     ui::print::section_start "${step}: Install az cli and related tooling - In progress..."
-    pip install azure-cli
+    AZ_REPO=$(lsb_release -cs)
+        echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
+        sudo tee /etc/apt/sources.list.d/azure-cli.list
+    curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+    sudo apt-get install azure-cli    
     ui::print::section_end "${step}: Done!"
 
 
