@@ -111,6 +111,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Kubernetes settings
+KUBE_EDITOR="nano"
 
 # Add docker aliases and functions
 alias docker-clean-unused='docker system prune --all --force --volumes'
