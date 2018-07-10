@@ -35,7 +35,7 @@ function install::run()
 
 	step="Step 2"
     ui::print::section_start "${step}: Install base utils - In progress..."
-	sudo apt -qq install git wget tar xz-utils gzip p7zip-full unzip
+	sudo apt -qq install git wget tar xz-utils gzip p7zip-full unzip recode apt-transport-https jq
     ui::print::section_end "${step}: Done!"
 
 
@@ -43,8 +43,8 @@ function install::run()
     ui::print::section_start "${step}: Install zsh - In progress..."
 	if [ ! -e ~/.zshrc ]; then
 	    sudo apt-get install zsh
-		ui::print::highlight "Installation done. Restart your session, then run install again to continue."
-		exit 0
+		#ui::print::highlight "Installation done. Restart your session, then run install again to continue."
+		#exit 0
 	else
 		echo "zsh allready installed."
 	fi
@@ -54,18 +54,21 @@ function install::run()
 		sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 		echo "A pretty oh-my-zsh requires powerline fonts - installing..."
 		sudo apt install fonts-powerline
-		ui::print::highlight "Installation done. Restart your session, then run install again to continue."
+		#ui::print::highlight "Installation done. Restart your session, then run install again to continue."
         exit 0
 	else
 		echo "oh-my-zsh allready installed."
 	fi
+
+    echo "Install zsh-dircolors-solarized as Oh-My_Zsh plugin..."
+    # See https://github.com/joel-porquet/zsh-dircolors-solarized for full instructions
+    # Note - activation of these scripts are already configured in .zshrc, we just need to download the resources
+    git clone --recursive git://github.com/joel-porquet/zsh-dircolors-solarized $ZSH_CUSTOM/plugins/zsh-dircolors-solarized 
     ui::print::section_end "${step}: Done!"
 
 
 	step="Step 4"
     ui::print::section_start "${step}: Installing python stuff - In progress..."
-	sudo apt-get -y install python3-pip
-	pip3 install --upgrade pip
 	pip3 install virtualenv --user
 	ui::print::section_end "${step}: Done!"
 
@@ -99,10 +102,14 @@ function install::run()
 
 	step="Step 7"
     ui::print::section_start "${step}: Install az cli and related tooling - In progress..."
-    pip install azure-cli
-	az aks install-cli
+    AZ_REPO=$(lsb_release -cs)
+        echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
+        sudo tee /etc/apt/sources.list.d/azure-cli.list
+    curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+    sudo apt-get install azure-cli
+    az aks install-cli
     ui::print::section_end "${step}: Done!"
-
+    
 	
     step="Step 8"
     ui::print::section_start "${step}: Install kubernetes tooling - In progress..."
@@ -116,12 +123,6 @@ function install::run()
 
 
 	step="Step 9"
-    ui::print::section_start "${step}: Install az cli and related tooling - In progress..."
-    pip install azure-cli
-    ui::print::section_end "${step}: Done!"
-
-
-	step="Step 10"
     ui::print::section_start "${step}: Install terraform - In progress..."
     wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin
@@ -129,10 +130,8 @@ function install::run()
     ui::print::section_end "${step}: Done!"
 
 	
-	step="Step 11"
-    ui::print::section_start "${step}: Update - In progress..."
+    ui::print::job_end "Installation done. Moving over to updates."
 	update::run
-    ui::print::section_end "${step}: Done!"
 
 }
 

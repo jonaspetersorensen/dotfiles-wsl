@@ -111,10 +111,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Add python stuff
-export PATH="/home/wonderlove/.pyenv/bin:$PATH:/home/wonderlove/.local/bin"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# Kubernetes settings
+KUBE_EDITOR="nano"
 
 # Add docker aliases and functions
 alias docker-clean-unused='docker system prune --all --force --volumes'
