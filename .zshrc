@@ -121,7 +121,7 @@ alias docker-clean-volumes='docker volume rm $(docker volume ls -q)'
 alias docker-clean-all='docker container stop $(docker container ls -a -q) && docker system prune -a -f --volumes'
 
 # Add Brigade aliases
-alias brigadeterm='TERM=xterm brigadeterm'
+alias brigadeterm='TERM=xterm brigadeterm-linux-amd64'
 
 export PATH=$PATH:/home/wonderlove/bin
 # Adding Go to PATH
