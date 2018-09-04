@@ -18,8 +18,11 @@ For just a quick update of all dotfiles then run "please update",
 WSL and persisting ssh keys can be a pain.  
 My current solution is to configure `~/.ssh/config` as shown in repo/ssh/config example.
   
-## HyperJs
+## Terminals
 
+A nice option is wsl-terminal, https://github.com/goreliu/wsl-terminal
+
+HyperJs is a fancy option that I used previously.  
 The terminal lives in windows, and creating symlinks to files in windows can produce ...fascinating headaches.  
 For now this dotfile will have to be manually copied to `/mnt/c/Users/<username>`.
 
