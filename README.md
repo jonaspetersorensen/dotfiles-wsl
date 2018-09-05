@@ -20,7 +20,8 @@ My current solution is to configure `~/.ssh/config` as shown in repo/ssh/config 
   
 ## Terminals
 
-A nice option is wsl-terminal, https://github.com/goreliu/wsl-terminal
+A nice option is wsl-terminal, https://github.com/goreliu/wsl-terminal.  
+To set it up to look nice then use the tips found in ["How to setup a nice looking terminal with WSL in Windows 10"](https://medium.com/@Andreas_cmj/how-to-setup-a-nice-looking-terminal-with-wsl-in-windows-10-creators-update-2b468ed7c326).
 
 HyperJs is a fancy option that I used previously.  
 The terminal lives in windows, and creating symlinks to files in windows can produce ...fascinating headaches.  
