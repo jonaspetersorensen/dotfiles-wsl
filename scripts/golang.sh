@@ -6,7 +6,7 @@ function golang::install()
 	local packageName
 	local binPath
 
-	packageName="go1.9.1.linux-amd64.tar.gz"
+	packageName="go1.11.linux-amd64.tar.gz"
 	binPath="/usr/local/go/bin"
 	
 	# Download, clean up and move source to default location
@@ -41,4 +41,5 @@ function golang::install()
 
 
 # Debug
+golang::install
 #"$@"
