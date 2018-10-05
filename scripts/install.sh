@@ -6,7 +6,7 @@
 # DEPENDENCIES
 . "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/ui.sh"
 . "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/update.sh"
-. "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/golang.sh"
+
 
 
 
@@ -14,7 +14,7 @@ function install::run()
 {
 	local TERRAFORM_VERSION
 	local KUBE_LATEST_VERSION
-	
+
 	TERRAFORM_VERSION=0.11.7
 	KUBE_LATEST_VERSION="v1.10.2"
 
@@ -48,7 +48,7 @@ function install::run()
 	else
 		echo "zsh allready installed."
 	fi
-	
+
 	if [ ! -d ~/.oh-my-zsh ]; then
 		echo "Installing oh-my-zsh..."
 		sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -75,7 +75,7 @@ function install::run()
 
 	step="Step 5"
     ui::print::section_start "${step}: Installing javascript dev tooling - In progress..."
-    
+
 	# first install nvm
 	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 	# then start it
@@ -129,7 +129,7 @@ function install::run()
 	rm -f terraform_${TERRAFORM_VERSION}_linux_amd64.zip
     ui::print::section_end "${step}: Done!"
 
-	
+
     ui::print::job_end "Installation done. Moving over to updates."
 	update::run
 

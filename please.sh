@@ -14,7 +14,7 @@
 function please::print_help()
 {
     ui::print::separator_horizontal
-    ui::print::help_text "Usage:" " " " "  
+    ui::print::help_text "Usage:" " " " "
     ui::print::help_text "please" "[command]" "" ""
     ui::print::help_text " " "install" "" ""
     ui::print::help_text " " "update" "" ""
@@ -33,27 +33,27 @@ if [ $# -eq 0 ]; then
 fi
 
 case "$1" in
-        
+
 	'--help')
-        	please::print_help
-        	;;
-        
-    	'-h')
-        	please::print_help
-        	;;
+        please::print_help
+        ;;
 
-    	'install')
-        	ui::print::job_start "Starting install of... well, everything"
-        	install::run
-        	ui::print::job_end "Install done!"
-        	;;
+  	'-h')
+        please::print_help
+        ;;
 
-    	'update')
-        	ui::print::job_start "Starting update of everything"
-        	update::run
-        	ui::print::job_end "Update done!"
-        	;;
-	*)
+    'install')
+        ui::print::job_start "Starting install of... well, everything"
+        install::run
+        ui::print::job_end "Install done!"
+        ;;
+
+     'update')
+        ui::print::job_start "Starting update of everything"
+        update::run
+        ui::print::job_end "Update done!"
+        ;;
+    *)
 		please::print_help
-		;;	
+		;;
 esac
