@@ -12,12 +12,6 @@
 
 function install::run()
 {
-	local TERRAFORM_VERSION
-	local KUBE_LATEST_VERSION
-
-	TERRAFORM_VERSION=0.11.7
-	KUBE_LATEST_VERSION="v1.10.2"
-
 	local step
 	local repoPath
 
@@ -85,7 +79,7 @@ function install::run()
 	echo "Testing nvm --version"
 	nvm --version
 	# now we can continue to install nodejs and related tools
-	nvm install node --reinstall-packages-from=node
+	nvm install node #--reinstall-packages-from=node
 	nvm use node
 	nvm alias default node
 	
@@ -96,7 +90,7 @@ function install::run()
     
 	step="Step 6"
     ui::print::section_start "${step}: Install golang - In progress..."
-    golang::install
+    . "$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/golang.sh"
     ui::print:section_end "${step}: Done!"
 
 
@@ -106,27 +100,24 @@ function install::run()
         echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main" | \
         sudo tee /etc/apt/sources.list.d/azure-cli.list
     curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-    sudo apt-get install azure-cli
-    az aks install-cli
+    sudo apt-get install azure-cli    
     ui::print::section_end "${step}: Done!"
     
 	
-    step="Step 8"
+    step="Step "
     ui::print::section_start "${step}: Install kubernetes tooling - In progress..."
-    echo "Installing kubectl ${KUBE_LATEST_VERSION}"
-    wget -q https://storage.googleapis.com/kubernetes-release/release/${KUBE_LATEST_VERSION}/bin/linux/amd64/kubectl -O /usr/local/bin/kubectl
+    local kubectl_version="$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)"
+    echo "Installing kubectl $kubectl_version"
+    curl -LO https://storage.googleapis.com/kubernetes-release/release/"$kubectl_version"/bin/linux/amd64/kubectl
     chmod +x /usr/local/bin/kubectl
+    sudo mv ./kubectl /usr/local/bin/kubectl
     
-    echo "Installing helm ${HELM_VERSION}"
-    wget -q http://storage.googleapis.com/kubernetes-helm/helm-${HELM_VERSION}-linux-amd64.tar.gz -O - | tar -xzO linux-amd64/helm > /usr/local/bin/helm
-    ui::print:section_end "${step}: Done!"    
-
-
-	step="Step 9"
-    ui::print::section_start "${step}: Install terraform - In progress..."
-    wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
-    unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin
-	rm -f terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+    echo "Installing helm"
+    curl https://raw.githubusercontent.com/helm/helm/master/scripts/get > get_helm.sh
+    chmod 700 get_helm.sh
+    ./get_helm.sh
+    helm init
+    rm get_helm.sh
     ui::print::section_end "${step}: Done!"
 
 
@@ -134,4 +125,3 @@ function install::run()
 	update::run
 
 }
-
