@@ -28,7 +28,6 @@ function update::run()
 
         step="Step 2"
         ui::print::section_start "${step}: Link dotfiles - In progress..."
-        ln -sf "$repoPath/.completion_list" ~/.completion_list
         ln -sf "$repoPath/.zshrc" ~/.zshrc
         ln -sf "$repoPath/.zsh-dircolors.config" ~/.zsh-dircolors.config
         ln -sf "$repoPath/.bashrc" ~/.bashrc

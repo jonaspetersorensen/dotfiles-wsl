@@ -25,11 +25,8 @@ fi
 # Start completion system
 # default setting
 #   autoload bashcompinit && bashcompinit
-# Settings for kubernetes tools
-autoload -U compaudit compinit bashcompinit compaudit && compinit && bashcompinit
-source $HOME/kubernetes-tools/completion/__completion
-# Load user specific complete list
-. ~/.completion_list
+autoload -U compaudit compinit bashcompinit
+compaudit && compinit && bashcompinit
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -127,8 +124,9 @@ alias docker-clean-all='docker container stop $(docker container ls -a -q) && do
 # Add Brigade aliases
 alias brigadeterm='TERM=xterm brigadeterm-linux-amd64'
 
-# Add kubernetes tools. See also "completion settings".
+# Add kubernetes tools.
 PATH=$HOME/kubernetes-tools/bin:$PATH
+. "$HOME/kubernetes-tools/completion/__completion"
 
 export PATH=$PATH:/home/wonderlove/bin
 # Adding Go to PATH
