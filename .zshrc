@@ -125,6 +125,7 @@ alias docker-clean-all='docker container stop $(docker container ls -a -q) && do
 alias brigadeterm='TERM=xterm brigadeterm-linux-amd64'
 
 # Add kubernetes tools.
+# https://github.com/shawnxlw/kubernetes-tools
 PATH=$HOME/kubernetes-tools/bin:$PATH
 . "$HOME/kubernetes-tools/completion/__completion"
 
