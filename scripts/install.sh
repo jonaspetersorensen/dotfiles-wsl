@@ -109,8 +109,8 @@ function install::run()
     local kubectl_version="$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)"
     echo "Installing kubectl $kubectl_version"
     curl -LO https://storage.googleapis.com/kubernetes-release/release/"$kubectl_version"/bin/linux/amd64/kubectl
-    chmod +x /usr/local/bin/kubectl
     sudo mv ./kubectl /usr/local/bin/kubectl
+    chmod +x /usr/local/bin/kubectl
     
     echo "Installing helm"
     curl https://raw.githubusercontent.com/helm/helm/master/scripts/get > get_helm.sh
