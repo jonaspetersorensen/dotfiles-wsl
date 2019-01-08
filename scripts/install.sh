@@ -37,8 +37,8 @@ function install::run()
     ui::print::section_start "${step}: Install zsh - In progress..."
 	if [ ! -e ~/.zshrc ]; then
 	    sudo apt-get install zsh
-		#ui::print::highlight "Installation done. Restart your session, then run install again to continue."
-		#exit 0
+		ui::print::highlight "ZSH installation done. Restart your session, then run install again to continue."
+		exit 0
 	else
 		echo "zsh allready installed."
 	fi
@@ -48,8 +48,8 @@ function install::run()
 		sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 		echo "A pretty oh-my-zsh requires powerline fonts - installing..."
 		sudo apt install fonts-powerline
-		#ui::print::highlight "Installation done. Restart your session, then run install again to continue."
-        exit 0
+		ui::print::highlight "oh-my-zsh installation done. Restart your session, then run install again to continue."
+        	exit 0
 	else
 		echo "oh-my-zsh allready installed."
 	fi
