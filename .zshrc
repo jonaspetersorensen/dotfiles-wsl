@@ -77,7 +77,7 @@ compaudit && compinit && bashcompinit
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-dircolors-solarized kubectl)
+plugins=(git zsh-dircolors-solarized kubectl docker)
 
 ZSH_DISABLE_COMPFIX=true
 
@@ -120,6 +120,7 @@ alias docker-clean-unused='docker system prune --all --force --volumes'
 alias docker-clean-containers='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 alias docker-clean-volumes='docker volume rm $(docker volume ls -q)'
 alias docker-clean-all='docker container stop $(docker container ls -a -q) && docker system prune -a -f --volumes'
+alias docker-clean-images='docker rmi $(docker images -a -q)'
 
 # Add Brigade aliases
 alias brigadeterm='TERM=xterm brigadeterm-linux-amd64'
