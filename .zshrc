@@ -133,4 +133,4 @@ PATH=$HOME/kubernetes-tools/bin:$PATH
 export PATH=$PATH:/home/wonderlove/bin
 # Adding Go to PATH
 export PATH=$PATH:/usr/local/go/bin
-export GOPATH=/mnt/c/Dev/go-workspace
+export GOPATH=/c/Dev/go-workspace
