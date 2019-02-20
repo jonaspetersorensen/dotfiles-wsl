@@ -106,11 +106,11 @@ function install::run()
 	
     step="Step "
     ui::print::section_start "${step}: Install kubernetes tooling - In progress..."
-    local kubectl_version="$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)"
-    echo "Installing kubectl $kubectl_version"
-    curl -LO https://storage.googleapis.com/kubernetes-release/release/"$kubectl_version"/bin/linux/amd64/kubectl
-    sudo mv ./kubectl /usr/local/bin/kubectl
-    chmod +x /usr/local/bin/kubectl
+    sudo apt-get update && sudo apt-get install -y apt-transport-https
+    curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+    echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+    sudo apt-get update
+    sudo apt-get install -y kubectl
     
     echo "Installing helm"
     curl https://raw.githubusercontent.com/helm/helm/master/scripts/get > get_helm.sh
