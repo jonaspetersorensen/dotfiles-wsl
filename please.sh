@@ -18,6 +18,7 @@ function please::print_help()
     ui::print::help_text "please" "[command]" "" ""
     ui::print::help_text " " "install" "" ""
     ui::print::help_text " " "update" "" ""
+    ui::print::help_text " " "vpn" "Enable dns when using vpn in windows"
     ui::print::help_text " " "--help -h" "Show help."
     ui::print::separator_horizontal
 }
@@ -52,6 +53,14 @@ case "$1" in
         ui::print::job_start "Starting update of everything"
         update::run
         ui::print::job_end "Update done!"
+        ;;
+
+     'vpn')
+        ui::print::job_start "Enabling vpn for windows"
+        cd ./vpn
+        source enable-win10-vpn.sh
+        cd ..
+        ui::print::job_end "Done!"
         ;;
     *)
 		please::print_help
