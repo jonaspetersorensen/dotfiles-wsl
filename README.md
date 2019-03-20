@@ -17,6 +17,11 @@ For just a quick update of all dotfiles then run "please update",
 
 WSL and persisting ssh keys can be a pain.  
 My current solution is to configure `~/.ssh/config` as shown in repo/ssh/config example.
+
+## VPN
+
+WSL does not pick up on network changes when enabling vpn in win10.  
+My current workaround is to manually set which dns WSL should use each time I start vpn in win10 as shown in [vpn/win10-vpn-resolv.conf](./vpn/win10-vpn-resolv.conf)
   
 ## Terminals
 
