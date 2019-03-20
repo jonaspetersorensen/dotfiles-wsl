@@ -21,7 +21,8 @@ My current solution is to configure `~/.ssh/config` as shown in repo/ssh/config 
 ## VPN
 
 WSL does not pick up on network changes when enabling vpn in win10.  
-My current workaround is to manually set which dns WSL should use each time I start vpn in win10 as shown in [vpn/win10-vpn-resolv.conf](./vpn/win10-vpn-resolv.conf)
+My current workaround is to manually set which dns WSL should use each time I start vpn in win10 as shown in [vpn/win10-vpn-resolv.conf](./vpn/win10-vpn-resolv.conf)  
+I then simply copy this file to /etc/resolv.conf each time I enable vpn in windows.
   
 ## Terminals
 
