@@ -130,7 +130,6 @@ alias brigadeterm='TERM=xterm brigadeterm-linux-amd64'
 PATH=$HOME/kubernetes-tools/bin:$PATH
 . "$HOME/kubernetes-tools/completion/__completion"
 
-export PATH=$PATH:/home/wonderlove/bin
 # Adding Go to PATH
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=/c/Dev/go-workspace
