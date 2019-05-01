@@ -187,3 +187,8 @@ export NVM_DIR="$HOME/.nvm"
 source /home/wonderlove/kubernetes-tools/completion/__completion
 #Kubernetes Tools zsh completion end
 
+
+#Kubernetes Tools zsh completion start
+source /home/wonderlove/kubernetes-tools/completion/__completion
+#Kubernetes Tools zsh completion end
+
