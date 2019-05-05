@@ -112,6 +112,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias cd-dev='cd /mnt/c/dev'
+alias cd-equinor='cd /mnt/c/dev/equinor'
+
 # Kubernetes settings
 KUBE_EDITOR="nano"
 
