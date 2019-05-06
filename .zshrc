@@ -1,6 +1,3 @@
-# Start tmux before anything else, as it will start zsh inside it
-if [ -z $TMUX ]; then; tmux; fi
-
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -14,6 +11,11 @@ export ZSH=/home/wonderlove/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
+
+# zsh tmux settings
+ZSH_TMUX_AUTOSTART="true"
+# do not autoconnect to existing session, allows a new iTerm tab to open with a new tmux session
+ZSH_TMUX_AUTOCONNECT="false"
 
 # start nvm
 if [ -r ~/.nvm ]; then
@@ -77,7 +79,7 @@ compaudit && compinit && bashcompinit
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-dircolors-solarized kubectl docker)
+plugins=(git zsh-dircolors-solarized tmux kubectl docker)
 
 ZSH_DISABLE_COMPFIX=true
 
@@ -124,9 +126,6 @@ alias docker-clean-containers='docker stop $(docker ps -a -q) && docker rm $(doc
 alias docker-clean-volumes='docker volume rm $(docker volume ls -q)'
 alias docker-clean-all='docker container stop $(docker container ls -a -q) && docker system prune -a -f --volumes'
 alias docker-clean-images='docker rmi $(docker images -a -q)'
-
-# Add Brigade aliases
-alias brigadeterm='TERM=xterm brigadeterm-linux-amd64'
 
 # Add kubernetes tools.
 # https://github.com/shawnxlw/kubernetes-tools
