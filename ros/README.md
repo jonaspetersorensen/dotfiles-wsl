@@ -27,23 +27,23 @@ Inspiration: https://github.com/Microsoft/WSL/issues/3368#issuecomment-414717437
 sudo apt install xubuntu-desktop
 ```
 
-### Step 4 - Install `mesa-utils` to verify 3d acceleration
-```
-sudo apt install mesa-utils
-```
-
-### Step 5 - Set env `DISPLAY`  
+### Step 4 - Set env `DISPLAY`  
 Two option, go with what works for you  
 ```
-# Option 1
-export DISPLAY="localhost:0"
-
-# Option 2
+# Option 1 - Gazebo defaults to this
 export DISPLAY="127.0.0.1:0"
+
+# Option 2 - Did not work for my Gazebo installation
+export DISPLAY="localhost:0"
 
 # Avoid
 # export DISPLAY=":0"
 # means X11 over AF_UNIX on /tmp/.X11-unix/X0, not AF_INET over localhost:6000. This will cause problems in some scenarios.
+```
+
+### Step 5 - Install `mesa-utils` to verify 3d acceleration
+```
+sudo apt install mesa-utils
 ```
 
 ### Step 6 - Run glxgears to verify 3d acceleration
@@ -51,13 +51,15 @@ export DISPLAY="127.0.0.1:0"
 glxgears
 ```
 
-### Step 7 - Install gazebo 9 with bootstrap script
+## Gazebo
+
+### Step 1 - Install gazebo 9 with bootstrap script
 
 ```
 curl -sSL http://get.gazebosim.org | sh
 ```
 
-### Step 8 - Run gazebo
+### Step 2 - Run gazebo
 ```
 gazebo --verbose
 ```
