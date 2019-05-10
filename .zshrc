@@ -143,3 +143,4 @@ export GOPATH=/c/Dev/go-workspace
 
 # Run ROS
 source /opt/ros/melodic/setup.zsh
+source ~/catkin_ws/devel/setup.zsh
