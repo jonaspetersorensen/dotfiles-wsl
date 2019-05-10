@@ -115,31 +115,34 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# X-Server settings
-export DISPLAY="127.0.0.1:0"
-
-# Add CD alias
+# CD aliases
 alias cd-dev='cd /mnt/c/dev'
 alias cd-equinor='cd /mnt/c/dev/equinor'
+
+# WSL aliases
+alias exit-wsl="killall -r '.*'"
 
 # Kubernetes settings
 KUBE_EDITOR="nano"
 
-# Add docker aliases and functions
+# Docker aliases
 alias docker-clean-unused='docker system prune --all --force --volumes'
 alias docker-clean-containers='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 alias docker-clean-volumes='docker volume rm $(docker volume ls -q)'
 alias docker-clean-all='docker container stop $(docker container ls -a -q) && docker system prune -a -f --volumes'
 alias docker-clean-images='docker rmi $(docker images -a -q)'
 
-# Add kubernetes tools.
+# Kubernetes tools
 # https://github.com/shawnxlw/kubernetes-tools
 PATH=$HOME/kubernetes-tools/bin:$PATH
 . "$HOME/kubernetes-tools/completion/__completion"
 
-# Adding Go to PATH
+# Golang
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=/c/Dev/go-workspace
+
+# X-Server settings
+export DISPLAY="127.0.0.1:0"
 
 # Run ROS environment and workspace setup
 source /opt/ros/melodic/setup.zsh
