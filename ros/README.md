@@ -1,11 +1,12 @@
-# ROS in WSL
+# How to ROS in WSL
 
-*work in progress*
+## Overview
 
-## Components
+To get ROS running in WSL along with the simulator then we need to make
+
 - WSL
-- ROS
 - X Server
+- ROS
 - Gazebo
 
 ## WSL
@@ -14,11 +15,9 @@ Be sure to be on Windows build 1809 or later.
 You can use windows update assistant to force an upgrade to one of the major builds.  
 If do force an upgrade then make sure to run windows update when done.
 
-## ROS
-
-Follow installation as described in the distro, [Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu)
-
 ## X Server
+
+A component that will handle display output from wsl to windows.
 
 Modified instructions from https://github.com/Microsoft/WSL/issues/3368#issuecomment-414717437
 
@@ -48,6 +47,8 @@ export DISPLAY="localhost:0"
 # means X11 over AF_UNIX on /tmp/.X11-unix/X0, not AF_INET over localhost:6000. This will cause problems in some scenarios.
 ```
 
+When you got something that works then add the setting to one of your shell session scripts (for example `.bashrc` or `.zshrc`) so it will be set every time you start a new session.
+
 ### Step 5 - Install `mesa-utils` to verify 3d acceleration
 ```
 sudo apt install mesa-utils
@@ -57,8 +58,19 @@ sudo apt install mesa-utils
 ```
 glxgears
 ```
+Expected output is a window with some animated gears.
+
+
+## ROS
+
+Follow installation as described in the distro, [Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu)
+
+If you run a Desktop-Full install (the recommended option) then Gazebo v9 (a simulator) should be installed along with it.  
+To test if ROS is able to use Gazebo then see [Test Gazebo with ROS integration](#Step-3---Test-Gazebo-with-ROS-integration) down below.
 
 ## Gazebo
+
+If Gazebo was not installed along with ROS then you have to install it manually.
 
 ### Step 1 - Install gazebo 9 with bootstrap script
 
@@ -97,3 +109,7 @@ http://gazebosim.org
 Please note the last line, `[Msg] Publicized address: 127.0.0.1`  
 This has to be a valid interface according to `ipconfig`.  
 In previous builds of gazebo you had to set the env `GAZEBO_IP` equal to the value of env `DISPLAY` to force it to use the correct interface, as gazebo would grab a possible inactive interface by default. This has now been fixed.
+
+### Step 3 - Test Gazebo with ROS integration
+
+Follow steps as described in http://gazebosim.org/tutorials?tut=ros_installing#TestingGazebowithROSIntegration

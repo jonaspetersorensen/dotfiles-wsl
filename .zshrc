@@ -140,3 +140,6 @@ PATH=$HOME/kubernetes-tools/bin:$PATH
 # Adding Go to PATH
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=/c/Dev/go-workspace
+
+# Run ROS
+source /opt/ros/melodic/setup.zsh
