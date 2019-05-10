@@ -21,7 +21,7 @@ function start_agent {
 	/usr/bin/ssh-add
 }
 
-# Source SSH settings, if applicable
+Source SSH settings, if applicable
 if [ -f "${SSH_ENV}" ]; then
 	. "${SSH_ENV}" > /dev/null
 	kill -0 $SSH_AGENT_PID 2>/dev/null || {
@@ -43,22 +43,6 @@ case $- in
     *i*) ;;
       *) return;;
 esac
-
-
-# # # # # # # # # # # # # # # # # # # # # # # 
-#
-#
-#	START ZSH
-#
-#
-
-# if running in terminal
-if test -t 1; then
-# ...start zsh
-exec zsh
-fi
-
-
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options

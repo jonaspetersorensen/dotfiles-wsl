@@ -18,16 +18,26 @@ For just a quick update of all dotfiles then run "please update",
 WSL and persisting ssh keys can be a pain.  
 My current solution is to configure `~/.ssh/config` as shown in repo/ssh/config example.
 
+
 ## VPN
 
 WSL does not pick up on network changes when enabling vpn in win10.  
 My current workaround is to manually set which dns WSL should use each time I start vpn in win10 as shown in [vpn/win10-vpn-resolv.conf](./vpn/win10-vpn-resolv.conf)  
 I then simply copy this file to /etc/resolv.conf each time I enable vpn in windows.
   
-## Terminals
+
+## WSL-Terminal
 
 A nice option is wsl-terminal, https://github.com/goreliu/wsl-terminal.  
 To set it up to look nice then use the tips found in ["How to setup a nice looking terminal with WSL in Windows 10"](https://medium.com/@Andreas_cmj/how-to-setup-a-nice-looking-terminal-with-wsl-in-windows-10-creators-update-2b468ed7c326).
+
+Note the following updates to that guide:
+- Remove any reference to `zsh` from `.bashrc`
+- Set zsh as default shell by running `chsh -s $(which zsh)`
+- Change default shell for wsl-terminal to be the same as wsl:  
+  In Win10, open `cmd` and run `<your install folder>\wsl-terminal\tools\6-set-default-shell.bat`
+
+
 
 HyperJs is a fancy option that I used previously.  
 The terminal lives in windows, and creating symlinks to files in windows can produce ...fascinating headaches.  

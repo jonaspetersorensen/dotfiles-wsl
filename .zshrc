@@ -5,7 +5,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export DOCKER_HOST=localhost:2375
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/wonderlove/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -17,12 +17,13 @@ ZSH_TMUX_AUTOSTART="true"
 # do not autoconnect to existing session, allows a new iTerm tab to open with a new tmux session
 ZSH_TMUX_AUTOCONNECT="false"
 
+# nvm seems to mess up zsh startup
 # start nvm
-if [ -r ~/.nvm ]; then
-	export NVM_DIR="$HOME/.nvm"
-	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion  
-fi
+#if [ -r ~/.nvm ]; then
+#	export NVM_DIR="$HOME/.nvm"
+#	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion  
+#fi
 
 # Start completion system
 # default setting
@@ -79,7 +80,7 @@ compaudit && compinit && bashcompinit
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-dircolors-solarized tmux kubectl docker)
+plugins=(git ssh-agent zsh-dircolors-solarized tmux kubectl docker)
 
 ZSH_DISABLE_COMPFIX=true
 
