@@ -115,6 +115,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# X-Server settings
+export DISPLAY="127.0.0.1:0"
+
+# Add CD alias
 alias cd-dev='cd /mnt/c/dev'
 alias cd-equinor='cd /mnt/c/dev/equinor'
 

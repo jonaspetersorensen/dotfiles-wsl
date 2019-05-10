@@ -3,9 +3,16 @@
 *work in progress*
 
 ## Components
+- WSL
 - ROS
 - X Server
 - Gazebo
+
+## WSL
+
+Be sure to be on Windows build 1809 or later.  
+You can use windows update assistant to force an upgrade to one of the major builds.  
+If do force an upgrade then make sure to run windows update when done.
 
 ## ROS
 
@@ -13,7 +20,7 @@ Follow installation as described in the distro, [Melodic](http://wiki.ros.org/me
 
 ## X Server
 
-Inspiration: https://github.com/Microsoft/WSL/issues/3368#issuecomment-414717437
+Modified instructions from https://github.com/Microsoft/WSL/issues/3368#issuecomment-414717437
 
 ### Step 1 - Install [VcXsrv Windows X Server](https://sourceforge.net/projects/vcxsrv/)
 
@@ -30,7 +37,7 @@ sudo apt install xubuntu-desktop
 ### Step 4 - Set env `DISPLAY`  
 Two option, go with what works for you  
 ```
-# Option 1 - Gazebo defaults to this
+# Option 1 - Gazebo wants this for my installation
 export DISPLAY="127.0.0.1:0"
 
 # Option 2 - Did not work for my Gazebo installation
