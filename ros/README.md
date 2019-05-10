@@ -2,7 +2,7 @@
 
 ## Overview
 
-To get ROS running in WSL along with the simulator then we need to make
+To get ROS running in WSL along with the simulator then we need handle these components
 
 - WSL
 - X Server
