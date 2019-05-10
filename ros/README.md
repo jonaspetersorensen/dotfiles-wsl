@@ -22,8 +22,6 @@ If do force an upgrade then make sure to run windows update when done.
 
 A component that will handle display output from wsl to windows.
 
-Modified instructions from https://github.com/Microsoft/WSL/issues/3368#issuecomment-414717437
-
 ### Step 1 - Install [VcXsrv Windows X Server](https://sourceforge.net/projects/vcxsrv/)
 
 ### Step 2 - Launch VcXsrv through XLaunch with the following commands
@@ -138,3 +136,6 @@ In previous builds of gazebo you had to set the env `GAZEBO_IP` equal to the val
 ### Step 3 - Test Gazebo with ROS integration
 
 Follow steps as described in http://gazebosim.org/tutorials?tut=ros_installing#TestingGazebowithROSIntegration
+
+A fair warning, Gazebo *really* likes cpu and it will gobble up everything.  
+This is a [known issue](https://bitbucket.org/osrf/gazebo/issues/1560/gazebo-causes-high-cpu) in Gazebo as it seems to have no limit on refresh rate.
