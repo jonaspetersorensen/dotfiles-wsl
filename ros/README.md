@@ -14,9 +14,15 @@ Thanks to [jbohren-hbr](https://github.com/Microsoft/WSL/issues/3368#issuecommen
 
 ## WSL
 
-Be sure to be on Windows build 1809 or later.  
+### Step 1 - Be sure to be on Windows build 1809 or later
+
 You can use windows update assistant to force an upgrade to one of the major builds.  
-If do force an upgrade then make sure to run windows update when done.
+If you do force an upgrade then make sure to run windows update after the upgrade has been completed.
+
+### Step 2 - Use Ubuntu 18.04
+
+For installation see [Windows Subsystem for Linux Documentation](https://msdn.microsoft.com/en-us/commandline/wsl/about)  
+Then have a look at how to set up ssh and a nice terminal in the [repo readme](../README.md)  
 
 ## X Server
 
@@ -47,10 +53,16 @@ export DISPLAY="localhost:0"
 
 # Avoid
 # export DISPLAY=":0"
-# means X11 over AF_UNIX on /tmp/.X11-unix/X0, not AF_INET over localhost:6000. This will cause problems in some scenarios.
+# (Note from the WSL devs): "means X11 over AF_UNIX on /tmp/.X11-unix/X0, not AF_INET over localhost:6000. This will cause problems in some scenarios."
 ```
 
-When you got something that works then add the setting to one of your shell session scripts (for example `.bashrc` or `.zshrc`) so it will be set every time you start a new session.
+Add your chosen option to one of your shell session scripts (for example `.bashrc` or `.zshrc`) so it will be set every time you start a new session.
+
+Example: My setting in `.zshrc` is
+```
+# X-Server settings
+export DISPLAY="127.0.0.1:0"
+```
 
 ### Step 5 - Install `mesa-utils` to verify 3d acceleration
 
@@ -86,16 +98,21 @@ source ~/catkin_ws/devel/setup.zsh
 ```
 Note that I have chosen to use the `zsh` setup, there are similar files for `bash` etc.
 
-### Step 4 - Test Gazebo with ROS integration 
+### Step 4 - Test Gazebo
 
-Verify setup with [Test Gazebo with ROS integration](#Step-3---Test-Gazebo-with-ROS-integration) down below.
+Verify setup with [Step 2 - Run gazebo](#Step-2---Run-gazebo).
 
 
 ## Gazebo
 
-If Gazebo was not installed along with ROS then you have to install it manually.
+The default simulator for ROS.  
 
-### Step 1 - Install gazebo 9 with bootstrap script
+A fair warning, Gazebo *really* likes cpu and it will gobble up everything.  
+This is a [known issue](https://bitbucket.org/osrf/gazebo/issues/1560/gazebo-causes-high-cpu) in Gazebo as it seems to have no limit on refresh rate.
+
+### (Optional) Step 1 - Install gazebo 9 with bootstrap script
+
+Skip this step if you installed ROS with the Desktop-Full package.
 
 ```
 curl -sSL http://get.gazebosim.org | sh
@@ -136,6 +153,3 @@ In previous builds of gazebo you had to set the env `GAZEBO_IP` equal to the val
 ### Step 3 - Test Gazebo with ROS integration
 
 Follow steps as described in http://gazebosim.org/tutorials?tut=ros_installing#TestingGazebowithROSIntegration
-
-A fair warning, Gazebo *really* likes cpu and it will gobble up everything.  
-This is a [known issue](https://bitbucket.org/osrf/gazebo/issues/1560/gazebo-causes-high-cpu) in Gazebo as it seems to have no limit on refresh rate.
