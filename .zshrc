@@ -141,6 +141,6 @@ PATH=$HOME/kubernetes-tools/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=/c/Dev/go-workspace
 
-# Run ROS
+# Run ROS environment and workspace setup
 source /opt/ros/melodic/setup.zsh
 source ~/catkin_ws/devel/setup.zsh
