@@ -10,7 +10,8 @@ Some thoughts, ideas and harsh words about setting up a better development exper
     I can get it to work in wsl, but it is really slow and it grabs 100% cpu at all times  
 
 [ ] Web client  
-    _TODO_
+    _TODO_  
+    http://gazebosim.org/gzweb.html
 
 ## ROS
 
