@@ -147,3 +147,6 @@ export DISPLAY="127.0.0.1:0"
 # Run ROS environment and workspace setup
 source /opt/ros/melodic/setup.zsh
 source ~/catkin_ws/devel/setup.zsh
+
+# n - node version manager, added by n-install (see http://git.io/n-install-repo).
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"

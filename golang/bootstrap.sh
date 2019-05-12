@@ -1,7 +1,12 @@
-#!bin/bash
+#!/bin/bash
 
+# This script will install
+# - golang
+echo ""
+echo "Starting install of golang tooling"
+echo ""
 
-function golang::install()
+function bootstrap_golang()
 {
 	local packageName
 	local binPath
@@ -29,17 +34,17 @@ function golang::install()
   		*)
 			echo "Adding Go bin to PATH"
 
-			#echo "# Adding Go to PATH" >> ~/.profile
+			#echo "# Golang" >> ~/.profile
 			#echo "export PATH=\$PATH:$binPath" >> ~/.profile
 
-			echo "# Adding Go to PATH" >> ~/.zshrc
+			echo "# Golang" >> ~/.zshrc
 			echo "export PATH=\$PATH:$binPath" >> ~/.zshrc
 			;;
 	esac
 
 }
 
+bootstrap_golang
 
-# Debug
-golang::install
-#"$@"
+echo ""
+echo "Install of golang tooling done."

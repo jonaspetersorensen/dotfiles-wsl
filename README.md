@@ -12,6 +12,7 @@ Then run "please install" to install all I(eh, you?) need for happy development,
 For just a quick update of all dotfiles then run "please update",  
 ```bash ~/.dotfiles/please.sh update```
 
+To install misc tooling then run the `bootstrap.sh` script in the corrensponding tool directory.
   
 ## SSH  
 

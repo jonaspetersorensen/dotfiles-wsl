@@ -13,7 +13,7 @@ function update::run()
         local step
         local repoPath
 
-	    # Path must be absolute to keep symlinks intact
+        # Path must be absolute to keep symlinks intact
         repoPath="$( cd "$( dirname "${BASH_SOURCE[0]}" )"/.. && pwd )"
 
         step="Step 1"
