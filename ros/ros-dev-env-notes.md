@@ -9,9 +9,11 @@ Some thoughts, ideas and harsh words about setting up a better development exper
 [x] Default gui client  
     I can get it to work in wsl, but it is really slow and it grabs 100% cpu at all times  
 
-[ ] Web client  
-    _TODO_  
+[x] Web client  
     http://gazebosim.org/gzweb.html
+
+    A much better option as long as you manage to import all the models you need.  
+    No more twidling with xserves etc, wsl will simply host the web server and you then browse from the windows side.
 
 ## ROS
 
