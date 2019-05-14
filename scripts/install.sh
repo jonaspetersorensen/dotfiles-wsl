@@ -20,6 +20,7 @@ function install::run()
 	step="Step 1"
     ui::print::section_start "${step}: Refresh packages - In progress..."
 	sudo add-apt-repository ppa:git-core/ppa
+	sudo add-apt-repository ppa:rmescandon/yq
 	sudo apt-get -y update
 	sudo apt-get -y upgrade
 	sudo apt-get -y dist-upgrade
