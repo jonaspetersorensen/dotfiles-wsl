@@ -29,7 +29,7 @@ function install::run()
 
 	step="Step 2"
     ui::print::section_start "${step}: Install base utils - In progress..."
-	sudo apt -qq install git wget tar xz-utils gzip p7zip-full unzip recode apt-transport-https jq build-essential python3-pip
+	sudo apt -qq install git wget tar xz-utils gzip p7zip-full unzip recode apt-transport-https jq yq build-essential python3-pip
     ui::print::section_end "${step}: Done!"
 
 
