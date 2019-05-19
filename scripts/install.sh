@@ -38,6 +38,7 @@ function install::run()
     ui::print::section_start "${step}: Install zsh - In progress..."
 	if [ ! -e ~/.zshrc ]; then
 	    sudo apt-get install zsh
+	    ln -sf "$repoPath/.zshrc" ~/.zshrc
 		ui::print::highlight "ZSH installation done. Restart your session, then run install again to continue."
 		exit 0
 	else
