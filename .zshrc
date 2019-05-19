@@ -134,8 +134,10 @@ alias docker-clean-images='docker rmi $(docker images -a -q)'
 
 # Kubernetes tools
 # https://github.com/shawnxlw/kubernetes-tools
-PATH=$HOME/kubernetes-tools/bin:$PATH
-. "$HOME/kubernetes-tools/completion/__completion"
+if [ -d "$HOME/kubernetes-tools" ]; then
+    PATH=$HOME/kubernetes-tools/bin:$PATH
+    . "$HOME/kubernetes-tools/completion/__completion"
+fi
 
 # Golang
 export PATH=$PATH:/usr/local/go/bin
@@ -145,8 +147,12 @@ export GOPATH=/c/Dev/go-workspace
 export DISPLAY="127.0.0.1:0"
 
 # Run ROS environment and workspace setup
-source /opt/ros/melodic/setup.zsh
-source ~/catkin_ws/devel/setup.zsh
+if [ -d "/opt/ros/melodic" ]; then
+    source /opt/ros/melodic/setup.zsh
+fi
+if [ -d "~/catkin_ws/devel" ]; then
+    source ~/catkin_ws/devel/setup.zsh
+fi
 
 # n - node version manager, added by n-install (see http://git.io/n-install-repo).
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
