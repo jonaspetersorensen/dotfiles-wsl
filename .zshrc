@@ -147,9 +147,15 @@ export GOPATH=/c/Dev/go-workspace
 export DISPLAY="127.0.0.1:0"
 
 # Run ROS environment and workspace setup
+# melodic distro
 if [ -d "/opt/ros/melodic" ]; then
     source /opt/ros/melodic/setup.zsh
 fi
+# kinetic distro
+if [ -d "/opt/ros/kinetic" ]; then
+    source /opt/ros/kinetic/setup.zsh
+fi
+# ROS workspace
 if [ -d "~/catkin_ws/devel" ]; then
     source ~/catkin_ws/devel/setup.zsh
 fi
