@@ -150,14 +150,17 @@ export DISPLAY="127.0.0.1:0"
 # melodic distro
 if [ -d "/opt/ros/melodic" ]; then
     source /opt/ros/melodic/setup.zsh
+    echo "ROS Melodic is ready."
 fi
 # kinetic distro
 if [ -d "/opt/ros/kinetic" ]; then
     source /opt/ros/kinetic/setup.zsh
+    echo "ROS Kinetic is ready."
 fi
 # ROS workspace
-if [ -d "~/catkin_ws/devel" ]; then
-    source ~/catkin_ws/devel/setup.zsh
+if [ -d "$HOME/catkin_ws/devel" ]; then
+    source "$HOME/catkin_ws/devel/setup.zsh"
+    echo "ROS workspace is ready."
 fi
 
 # n - node version manager, added by n-install (see http://git.io/n-install-repo).
