@@ -122,6 +122,9 @@ alias cd-equinor='cd /mnt/c/dev/equinor'
 # WSL aliases
 alias exit-wsl="killall -r '.*'"
 
+# WSL distro
+cat $HOME/wsl-distro
+
 # Kubernetes settings
 KUBE_EDITOR="nano"
 
