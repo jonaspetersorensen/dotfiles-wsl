@@ -3,7 +3,7 @@
 WSL + x-server can work quite nice, but it requires some twidling.  
 Gazebo native client is a brutal cpu hog, so a better option to display the simulation is to use the Gazebo web client, [GzWeb](http://gazebosim.org/gzweb.html)
 
-Now we can use wsl in it's normal headless mode and let it host a webserver, and then view the simulation in a browser from the windows side.
+Now we can use wsl in it's normal headless mode and let it host a web server and view the simulation in a browser from the windows side.
 
 ## Installation
 
