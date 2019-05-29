@@ -20,6 +20,7 @@ function install::run()
 	step="Step 1"
     ui::print::section_start "${step}: Refresh packages - In progress..."
 	sudo add-apt-repository ppa:git-core/ppa
+	sudo add-apt-repository ppa:rmescandon/yq
 	sudo apt-get -y update
 	sudo apt-get -y upgrade
 	sudo apt-get -y dist-upgrade
@@ -29,7 +30,7 @@ function install::run()
 
 	step="Step 2"
     ui::print::section_start "${step}: Install base utils - In progress..."
-	sudo apt -qq install git wget tar xz-utils gzip p7zip-full unzip recode apt-transport-https jq build-essential python3-pip
+	sudo apt -qq install git wget tar xz-utils gzip p7zip-full unzip recode apt-transport-https jq yq build-essential python3-pip
     ui::print::section_end "${step}: Done!"
 
 
@@ -37,6 +38,7 @@ function install::run()
     ui::print::section_start "${step}: Install zsh - In progress..."
 	if [ ! -e ~/.zshrc ]; then
 	    sudo apt-get install zsh
+	    ln -sf "$repoPath/.zshrc" ~/.zshrc
 		ui::print::highlight "ZSH installation done. Restart your session, then run install again to continue."
 		exit 0
 	else
