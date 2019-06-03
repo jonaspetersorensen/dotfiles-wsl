@@ -44,6 +44,11 @@ HyperJs is a fancy option that I used previously.
 The terminal lives in windows, and creating symlinks to files in windows can produce ...fascinating headaches.  
 For now this dotfile will have to be manually copied to `/mnt/c/Users/<username>`.
 
+## VS-Code remote
+
+https://github.com/microsoft/vscode-remote-release  
+zsh + tmux can sometimes be tricky to run when using the vscode remote extension. Depending on update I have to turn of automatic start of tmux to get the extension to be able to connect to wsl.
+
 ## Resources
 
 ###### Official documentation
