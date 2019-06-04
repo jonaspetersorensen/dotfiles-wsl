@@ -13,7 +13,7 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="agnoster"
 
 # zsh tmux settings
-ZSH_TMUX_AUTOSTART="true"
+ZSH_TMUX_AUTOSTART="false"
 # do not autoconnect to existing session, allows a new iTerm tab to open with a new tmux session
 ZSH_TMUX_AUTOCONNECT="false"
 
