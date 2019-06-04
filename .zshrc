@@ -1,6 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# set PATH so it includes user's private bin if it exists
+#if [ -d "$HOME/.local/bin" ] ; then
+#   export PATH="$HOME/.local/bin:$PATH"
+#fi
+
 # Docker - set default host to be Docker on Windows
 export DOCKER_HOST=localhost:2375
 
