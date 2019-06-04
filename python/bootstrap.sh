@@ -6,6 +6,19 @@ echo ""
 echo "Starting install of python tooling"
 echo ""
 
+echo "Python 2 stuff..."
+python2 --version
+sudo apt install python-pip
+pip --version
+
+echo ""
+echo "Python 3 stuff..."
+python3 --version
+sudo apt install python3-pip
+pip3 --version
+
+echo ""
+echo "Install virtualenv..."
 pip3 install virtualenv --user
 
 echo ""
