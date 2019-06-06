@@ -22,14 +22,6 @@ ZSH_TMUX_AUTOSTART="false"
 # do not autoconnect to existing session, allows a new iTerm tab to open with a new tmux session
 ZSH_TMUX_AUTOCONNECT="false"
 
-# nvm seems to mess up zsh startup
-# start nvm
-#if [ -r ~/.nvm ]; then
-#	export NVM_DIR="$HOME/.nvm"
-#	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion  
-#fi
-
 # Start completion system
 # default setting
 #   autoload bashcompinit && bashcompinit
@@ -146,6 +138,9 @@ if [ -d "$HOME/kubernetes-tools" ]; then
     PATH=$HOME/kubernetes-tools/bin:$PATH
     . "$HOME/kubernetes-tools/completion/__completion"
 fi
+
+# Startup directory
+cd "$HOME"
 
 # Golang
 export PATH=$PATH:/usr/local/go/bin
