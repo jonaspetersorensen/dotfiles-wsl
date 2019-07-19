@@ -4,6 +4,12 @@
 #
 # Simplify exploring of azure rest apis
 
+# DOCS
+#
+# Consumption
+# https://docs.microsoft.com/en-us/azure/billing/billing-consumption-api-overview#price-sheet-api
+# https://docs.microsoft.com/en-us/rest/api/consumption/pricesheet
+
 
 ########################################################################
 # Support funcs
