@@ -49,6 +49,14 @@ For now this dotfile will have to be manually copied to `/mnt/c/Users/<username>
 https://github.com/microsoft/vscode-remote-release  
 zsh + tmux can sometimes be tricky to run when using the vscode remote extension. Depending on update I have to turn of automatic start of tmux to get the extension to be able to connect to wsl.
 
+## Docker
+
+wsl + docker in windows path workaround
+```sh
+sudo mkdir /c
+sudo mount --bind /mnt/c /c
+```
+
 ## Resources
 
 ###### Official documentation
