@@ -112,6 +112,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Terminal settings
+TERM=xterm-256color
+
 # CD aliases
 alias cd-dev='cd /mnt/c/dev'
 alias cd-equinor='cd /mnt/c/dev/equinor'
