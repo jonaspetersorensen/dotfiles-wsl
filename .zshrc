@@ -157,5 +157,4 @@ if [ -f "$HOME/ros_env_setup.sh" ]; then
     source "$HOME/ros_env_setup.sh"
 fi
 
-# n - node version manager, added by n-install (see http://git.io/n-install-repo).
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
