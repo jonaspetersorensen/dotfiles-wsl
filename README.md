@@ -55,6 +55,9 @@ While we wait for WSL2 (the only place this will be fixed), we have the followin
 1. Close VSCode, run command, reopen VSCode
 1. In VSCode set `remote.WSL.fileWatcher.polling` to true
 
+For NPM troubles it usually boils down to ownership of dir `node_modules`, which npm itself some times make a mess of.  
+Fix by executing `sudo chown -R $(whoami) node_modules`
+
 ## Docker
 
 wsl + docker in windows path workaround
