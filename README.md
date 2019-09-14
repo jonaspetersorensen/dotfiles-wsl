@@ -44,10 +44,19 @@ HyperJs is a fancy option that I used previously.
 The terminal lives in windows, and creating symlinks to files in windows can produce ...fascinating headaches.  
 For now this dotfile will have to be manually copied to `/mnt/c/Users/<username>`.
 
-## VS-Code remote
+## VSCode remote
 
 https://github.com/microsoft/vscode-remote-release  
 zsh + tmux can sometimes be tricky to run when using the vscode remote extension. Depending on update I have to turn of automatic start of tmux to get the extension to be able to connect to wsl.
+
+Trouble with WSL1  
+Sometimes VSCode remote will lock files in wsl1, see [I see EACCESS: permission denied error trying to rename a folder in the open workspace](https://code.visualstudio.com/docs/remote/wsl#_i-see-eaccess-permission-denied-error-trying-to-rename-a-folder-in-the-open-workspace)  
+While we wait for WSL2 (the only place this will be fixed), we have the following options:  
+1. Close VSCode, run command, reopen VSCode
+1. In VSCode set `remote.WSL.fileWatcher.polling` to true
+
+For NPM troubles it usually boils down to ownership of dir `node_modules`, which npm itself some times make a mess of.  
+Fix by executing `sudo chown -R $(whoami) node_modules`
 
 ## Docker
 
