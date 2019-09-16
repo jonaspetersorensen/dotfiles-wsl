@@ -14,7 +14,7 @@ echo ""
 echo "Starting install of nodejs and version manager"
 echo ""
 
-# First install "n" using third party installer
+# First install the version manager "n" using third party installer
 curl -L https://git.io/n-install | bash
 
 source ~/.zshrc
