@@ -142,6 +142,9 @@ if [ -d "$HOME/kubernetes-tools" ]; then
     . "$HOME/kubernetes-tools/completion/__completion"
 fi
 
+# VPN aliases
+alias vpn-enable='source ~/.dotfiles/vpn/enable-win10-vpn.sh'
+
 # Startup directory
 cd "$HOME"
 
