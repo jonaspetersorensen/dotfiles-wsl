@@ -152,6 +152,9 @@ cd "$HOME"
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=/c/Dev/go-workspace
 
+# Misc windows tools
+alias nmap='"/mnt/c/Program Files (x86)/Nmap/nmap.exe"'
+
 # X-Server settings
 export DISPLAY="127.0.0.1:0"
 
