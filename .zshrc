@@ -152,14 +152,12 @@ cd "$HOME"
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=/c/Dev/go-workspace
 
-<<<<<<< HEAD
 # NodeJS and npm
 # Look for locally installed binaries first
 PATH=./node_modules/.bin:$PATH
-=======
-# Misc windows tools
+
+# NMAP: In WSL it is better to use nmap on the windows side
 alias nmap='"/mnt/c/Program Files (x86)/Nmap/nmap.exe"'
->>>>>>> 326aecef21e1ba11b109b444d97d7d1441e4f6ae
 
 # X-Server settings
 export DISPLAY="127.0.0.1:0"
