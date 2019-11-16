@@ -149,6 +149,10 @@ cd "$HOME"
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=/c/Dev/go-workspace
 
+# NodeJS and npm
+# Look for locally installed binaries first
+PATH=./node_modules/.bin:$PATH
+
 # X-Server settings
 export DISPLAY="127.0.0.1:0"
 
