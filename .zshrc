@@ -149,7 +149,9 @@ alias vpn-enable='source ~/.dotfiles/vpn/enable-win10-vpn.sh'
 cd "$HOME"
 
 # Golang
-export PATH=$PATH:/usr/local/go/bin
+# https://github.com/golang/go/wiki/GOPATH
+# The GOPATH environment variable is used to specify directories outside of $GOROOT that contain 
+# the source for Go projects and their binaries
 export GOPATH=/c/Dev/go-workspace
 
 # NodeJS and npm
