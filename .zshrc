@@ -152,7 +152,7 @@ cd "$HOME"
 # https://github.com/golang/go/wiki/GOPATH
 # The GOPATH environment variable is used to specify directories outside of $GOROOT that contain 
 # the source for Go projects and their binaries
-export GOPATH=/c/Dev/go-workspace
+export GOPATH=/mnt/c/Dev/go-workspace:/mnt/c/Dev/equinor/go-workspace
 
 # NodeJS and npm
 # Look for locally installed binaries first
