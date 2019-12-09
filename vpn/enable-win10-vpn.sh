@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # WSL does not pick up on network changes in win10 when win10 use vpn.
 # The workaround is to manually set which dns WSL should use each time we start vpn in win10.
