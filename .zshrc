@@ -136,11 +136,8 @@ alias docker-clean-all='docker container stop $(docker container ls -a -q) && do
 alias docker-clean-images='docker rmi $(docker images -a -q)'
 
 # Kubernetes tools
-# https://github.com/shawnxlw/kubernetes-tools
-if [ -d "$HOME/kubernetes-tools" ]; then
-    PATH=$HOME/kubernetes-tools/bin:$PATH
-    . "$HOME/kubernetes-tools/completion/__completion"
-fi
+# Autocomplete is included in kubectl, https://kubernetes.io/docs/tasks/tools/install-kubectl/
+source <(kubectl completion zsh)
 
 # VPN aliases
 alias vpn-enable='source ~/.dotfiles/vpn/enable-win10-vpn.sh'
