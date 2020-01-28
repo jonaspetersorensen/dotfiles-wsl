@@ -84,6 +84,10 @@ sudo mount --bind /mnt/c /c
 - [Living inside the updated windows subsystem for linux](https://taoofmac.com/space/blog/2017/05/07/1920)
 - [dotfiles-win](https://github.com/jieverson/dotfiles-win)
 
+###### Shell scripting
+- [Shell Scripting Tutorial](https://www.shellscript.sh/)
+- [Bash scripting tutorial](https://ryanstutorials.net/bash-scripting-tutorial/)
+
 ## Odd bits  
 
 - Nothing so far :)
