@@ -167,3 +167,9 @@ if [ -f "$HOME/ros_env_setup.sh" ]; then
 fi
 
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+
+# ArduPilot dev config
+# The "auto-configure dev environment" script will update .profile, which is not read by zsh. So we have to update .zsrc manually.
+export PATH=/opt/gcc-arm-none-eabi-6-2017-q2-update/bin:$PATH
+export PATH=/mnt/c/dev/equinor/ardupilot/Tools/autotest:$PATH
+

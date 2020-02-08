@@ -10,7 +10,7 @@ Then run "please install" to install all I(eh, you?) need for happy development,
 ```bash ~/.dotfiles/please.sh install```
 
 For just a quick update of all dotfiles then run "please update",  
-```bash ~/.dotfiles/please.sh update```
+```source ~/.dotfiles/please.sh update```
 
 To install misc tooling then run the `bootstrap.sh` script in the corrensponding tool directory.
   
@@ -87,3 +87,16 @@ sudo mount --bind /mnt/c /c
 ## Odd bits  
 
 - Nothing so far :)
+
+
+## Troubleshooting
+
+### `.profile` is not read
+
+So you have installed something that added config to `.profile`, but you cannot see that these changes are actually being read.  
+A typically example is changes to `$PATH`.  
+Welcome to linux where everything is customized: `.profile` is not read if `bash`, `zsh` or which ever else custom shell is present.
+
+_Solution_  
+`bash`, `zsh` and similar shells have their own profile configs due to misc incompatabilities with the good'ol'days `sh`.  
+Simply copy what you need from `. profile` to `.zprofile` (in case of `zsh`).
