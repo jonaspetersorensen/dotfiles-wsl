@@ -170,6 +170,14 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 
 # ArduPilot dev config
 # The "auto-configure dev environment" script will update .profile, which is not read by zsh. So we have to update .zsrc manually.
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
 export PATH=/opt/gcc-arm-none-eabi-6-2017-q2-update/bin:$PATH
 export PATH=/mnt/c/dev/equinor/ardupilot/Tools/autotest:$PATH
 
