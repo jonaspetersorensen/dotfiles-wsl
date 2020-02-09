@@ -45,63 +45,15 @@ Thanks to [jbohren-hbr](https://github.com/Microsoft/WSL/issues/3368#issuecommen
 
 ### X Server
 
-A component that will handle display output from wsl to windows.
-
-1. Install [VcXsrv Windows X Server](https://sourceforge.net/projects/vcxsrv/)  
-
-1. Launch VcXsrv through XLaunch with the following commands  
-   ![VcXsr settings: display](./VcXsrv-settings-display.png)  
-   ![VcXsr settings: client startup](./VcXsrv-settings-client-startup.png)  
-   ![VcXsr settings: extra settings](./VcXsrv-settings-extra-settings.png)  
-
-1. Install `xubuntu-desktop` to suppress window manager warnings  
-   ```
-   sudo apt install xubuntu-desktop
-   ```
-
-1. Set env `DISPLAY`  
-
-    Two option, go with what works for you  
-    ```
-    # Option 1 - Gazebo wants this for my installation
-    export DISPLAY="127.0.0.1:0"
-
-    # Option 2 - Did not work for my Gazebo installation
-    export DISPLAY="localhost:0"
-
-    # Avoid
-    # export DISPLAY=":0"
-    # (Note from the WSL devs): "means X11 over AF_UNIX on /tmp/.X11-unix/X0, not AF_INET over localhost:6000. This will cause problems in some scenarios."
-    ```
-
-    Add your chosen option to one of your shell session scripts (for example `.bashrc` or `.zshrc`) so it will be set every time you start a new session.
-
-    Example: My setting in `.zshrc` is
-    ```
-    # X-Server settings
-    export DISPLAY="127.0.0.1:0"
-    ```
-
-1. Install `mesa-utils` to verify 3d acceleration
-
-   ```
-   sudo apt install mesa-utils
-   ```
-
-1. Run glxgears to verify 3d acceleration
-
-   ```
-   glxgears
-   ```
-   Expected output is a window with some animated gears.
-
+See ["WSL and X-Server"](../x-server.md)
 
 ### Gazebo
 
 The default simulator for ROS.  
 
 A fair warning, the Gazebo desktop client *really* likes cpu and it will gobble up everything.  
-This is a [known issue](https://bitbucket.org/osrf/gazebo/issues/1560/gazebo-causes-high-cpu) in Gazebo as it seems to have no limit on refresh rate.
+This is a [known issue](https://bitbucket.org/osrf/gazebo/issues/1560/gazebo-causes-high-cpu) in Gazebo as it seems to have no limit on refresh rate.  
+When you use VcXsrv as the x-server then there is an option to use native opengl when you boot it up on the windows side. You must leave this setting off, or Gazebo might do weird things or simply just black out.
 
 1. (Optional) - Install gazebo 9 with bootstrap script  
 
