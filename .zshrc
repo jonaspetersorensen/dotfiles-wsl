@@ -169,7 +169,7 @@ fi
 export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 # Enable local ArduPilot development environment settings
-if [ -f "$HOME/ardusub-development.env" ] ; then
-    source "$HOME"/ardusub-development.env
+if [ -f "$HOME/ardupilot-development.env" ] ; then
+    source "$HOME"/ardupilot-development.env
 fi
 
