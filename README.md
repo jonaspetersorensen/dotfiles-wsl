@@ -71,11 +71,12 @@ sudo mount --bind /mnt/c /c
 If you use Ubuntu then this setup is quite easy:
 
 1. Follow the [installation tutorials](https://www.ardusub.com/developers/developers.html)
+1. In the ArduPilot guide, see [Setting up the waf Build Environment on Windows10 using WSL](https://ardupilot.org/dev/docs/building-setup-windows10.html)
 1. The "install preqreqs" script provided by ArduPilot guide will update your `.profile`  
    You will need to move the settings that was added to `.profile` to what ever is your shell profile script, see ["`.profile` is not read"](#profile-is-not-read), and then restart your WSL session to reload the profile.  
    Verify that `$PATH` now include the paths added by ArduPilot settings.
-1. Setup [x-server](x-server.md) for visual output
-1. Native opengl is supported by MAVProxy Ground Control Station
+1. Setup [x-server](x-server.md) for visual output  
+   - Native opengl is supported by MAVProxy Ground Control Station
 1. Done!
 
 ## ROS development environment
