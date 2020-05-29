@@ -122,3 +122,7 @@ Welcome to linux where everything is customized: `.profile` is not read if `bash
 _Solution_  
 `bash`, `zsh` and similar shells have their own profile configs due to misc incompatabilities with the good'ol'days `sh`.  
 Simply copy what you need from `. profile` to `.zprofile` (in case of `zsh`).
+
+## Windows terminal is dropping frames when nvidia G-Sync is active
+For long discussion see [terminal git issue 649](https://github.com/microsoft/terminal/issues/649)
+The only way I could fix this in my machine was to add the setting `"experimental.rendering.software": true` in `settings.json`
