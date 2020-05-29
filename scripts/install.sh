@@ -61,7 +61,7 @@ function install::run()
     echo "Install zsh-dircolors-solarized as Oh-My_Zsh plugin..."
     # See https://github.com/joel-porquet/zsh-dircolors-solarized for full instructions
     # Note - activation of these scripts are already configured in .zshrc, we just need to download the resources
-    git clone --recursive git://github.com/joel-porquet/zsh-dircolors-solarized $ZSH_CUSTOM/plugins/zsh-dircolors-solarized 
+    git clone --recursive git://github.com/joel-porquet/zsh-dircolors-solarized ~/.oh-my-zsh/plugins/zsh-dircolors-solarized 
     ui::print::section_end "${step}: Done!"
 
 

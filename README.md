@@ -1,5 +1,5 @@
 # dotfiles-wsl
-My horrible configuration files for Ubuntu on Windows, and an even worse attempt at creating an installer for mucking it all up again.
+My horrible configuration files for Ubuntu on Windows WSL2, and an even worse attempt at creating an installer for mucking it all up again.
 
 ## Usage
 
@@ -25,24 +25,19 @@ My current solution is to configure `~/.ssh/config` as shown in repo/ssh/config 
 WSL does not pick up on network changes when enabling vpn in win10.  
 My current workaround is to manually set which dns WSL should use each time I start vpn in win10 as shown in [vpn/win10-vpn-resolv.conf](./vpn/win10-vpn-resolv.conf)  
 I then simply copy this file to /etc/resolv.conf each time I enable vpn in windows.
-  
-
-## WSL-Terminal
-
-A nice option is wsl-terminal, https://github.com/goreliu/wsl-terminal.  
-To set it up to look nice then use the tips found in ["How to setup a nice looking terminal with WSL in Windows 10"](https://medium.com/@Andreas_cmj/how-to-setup-a-nice-looking-terminal-with-wsl-in-windows-10-creators-update-2b468ed7c326).
-
-Note the following updates to that guide:
-- Remove any reference to `zsh` from `.bashrc`
-- Set zsh as default shell by running `chsh -s $(which zsh)`
-- Change default shell for wsl-terminal to be the same as wsl:  
-  In Win10, open `cmd` and run `<your install folder>\wsl-terminal\tools\6-set-default-shell.bat`
 
 
+## Windows terminal
 
-HyperJs is a fancy option that I used previously.  
-The terminal lives in windows, and creating symlinks to files in windows can produce ...fascinating headaches.  
-For now this dotfile will have to be manually copied to `/mnt/c/Users/<username>`.
+ - [Setting up WSL2, Windows Terminal and oh-my-zsh](https://blog.nillsf.com/index.php/2020/02/17/setting-up-wsl2-windows-terminal-and-oh-my-zsh/)
+
+
+### Powershell
+To be able to run themes etc you need to be able to run scripts: Run `Set-ExecutionPolicy RemoteSigned`
+- [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh)  
+See [Scott Hanselmann post](https://www.hanselman.com/blog/HowToMakeAPrettyPromptInWindowsTerminalWithPowerlineNerdFontsCascadiaCodeWSLAndOhmyposh.aspx)
+
+
 
 ## VSCode remote
 
@@ -60,11 +55,8 @@ Fix by executing `sudo chown -R $(whoami) node_modules`
 
 ## Docker
 
-wsl + docker in windows path workaround
-```sh
-sudo mkdir /c
-sudo mount --bind /mnt/c /c
-```
+Use WSL2 then reinstall "Docker for Windows" (latest stable) and let it use WSL2 when it asks during the install process.
+
 
 ## ArduSub development environment
 
@@ -79,17 +71,11 @@ If you use Ubuntu then this setup is quite easy:
    - Native opengl is supported by MAVProxy Ground Control Station
 1. Done!
 
+
 ## ROS development environment
 
 See [ROS README](./ros/README.md)  
 
-## Windows terminal
-
-See [Scott Hanselmann post](https://www.hanselman.com/blog/HowToMakeAPrettyPromptInWindowsTerminalWithPowerlineNerdFontsCascadiaCodeWSLAndOhmyposh.aspx)
-
-### Powershell
-To be able to run themes etc you need to be able to run scripts: Run `Set-ExecutionPolicy RemoteSigned`
-- [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh)  
 
 ## Resources
 

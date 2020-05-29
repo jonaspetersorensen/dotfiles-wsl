@@ -1,0 +1,14 @@
+#!/bin/bash
+
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/*
+test -f ~/.ssh/authorized_keys && chmod 644 ~/.ssh/authorized_keys
+chmod 644 ~/.ssh/known_hosts
+chmod 644 ~/.ssh/config
+chmod 644 ~/.ssh/*.pub
+# chmod 600 ~/.ssh/id_rsa
+# chmod 644 ~/.ssh/id_rsa.pub
+# chmod 600 ~/.ssh/github_rsa
+# chmod 644 ~/.ssh/github_rsa.pub
+# chmod 600 ~/.ssh/mozilla_rsa
+# chmod 644 ~/.ssh/mozilla_rsa.pub

@@ -7,7 +7,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 #fi
 
 # Docker - set default host to be Docker on Windows
-export DOCKER_HOST=localhost:2375
+#export DOCKER_HOST=localhost:2375
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
@@ -121,9 +121,6 @@ alias cd-equinor='cd /mnt/c/dev/equinor'
 
 # WSL aliases
 alias exit-wsl="killall -r '.*'"
-
-# WSL distro
-cat $HOME/wsl-distro
 
 # Kubernetes settings
 KUBE_EDITOR="nano"
