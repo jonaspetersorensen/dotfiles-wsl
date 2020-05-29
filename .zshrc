@@ -6,9 +6,6 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 #   export PATH="$HOME/.local/bin:$PATH"
 #fi
 
-# Docker - set default host to be Docker on Windows
-#export DOCKER_HOST=localhost:2375
-
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
 
@@ -16,11 +13,6 @@ export ZSH=~/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
-
-# zsh tmux settings
-ZSH_TMUX_AUTOSTART="false"
-# do not autoconnect to existing session, allows a new iTerm tab to open with a new tmux session
-ZSH_TMUX_AUTOCONNECT="false"
 
 # Start completion system
 # default setting
@@ -78,6 +70,12 @@ compaudit && compinit && bashcompinit
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git ssh-agent zsh-dircolors-solarized tmux kubectl docker)
+
+# Plugin: zsh tmux settings
+# Disable autostart if VSCode is misbehaving
+ZSH_TMUX_AUTOSTART="true"
+# do not autoconnect to existing session, allows a new iTerm tab to open with a new tmux session
+ZSH_TMUX_AUTOCONNECT="false"
 
 ZSH_DISABLE_COMPFIX=true
 
