@@ -83,6 +83,13 @@ If you use Ubuntu then this setup is quite easy:
 
 See [ROS README](./ros/README.md)  
 
+## Windows terminal
+
+See [Scott Hanselmann post](https://www.hanselman.com/blog/HowToMakeAPrettyPromptInWindowsTerminalWithPowerlineNerdFontsCascadiaCodeWSLAndOhmyposh.aspx)
+
+### Powershell
+To be able to run themes etc you need to be able to run scripts: Run `Set-ExecutionPolicy RemoteSigned`
+- [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh)  
 
 ## Resources
 
