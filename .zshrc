@@ -113,10 +113,6 @@ source $ZSH/oh-my-zsh.sh
 # Terminal settings
 TERM=xterm-256color
 
-# CD aliases
-alias cd-dev='cd /mnt/c/dev'
-alias cd-equinor='cd /mnt/c/dev/equinor'
-
 # WSL aliases
 alias exit-wsl="killall -r '.*'"
 
