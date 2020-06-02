@@ -77,7 +77,7 @@ ZSH_TMUX_AUTOSTART="true"
 # do not autoconnect to existing session, allows a new iTerm tab to open with a new tmux session
 ZSH_TMUX_AUTOCONNECT="false"
 
-ZSH_DISABLE_COMPFIX=true
+ZSH_DISABLE_COMPFIX=false
 
 source $ZSH/oh-my-zsh.sh
 
