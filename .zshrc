@@ -114,8 +114,8 @@ source $ZSH/oh-my-zsh.sh
 TERM=xterm-256color
 
 # CD aliases
-alias cd-dev='cd /mnt/c/dev'
-alias cd-equinor='cd /mnt/c/dev/equinor'
+alias cd-dev='cd ~/dev'
+alias cd-equinor='cd ~/dev/equinor'
 
 # WSL aliases
 alias exit-wsl="killall -r '.*'"
