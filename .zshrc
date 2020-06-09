@@ -163,3 +163,7 @@ export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PR
 if [ -f "$HOME/ardupilot-development.env" ] ; then
     source "$HOME"/ardupilot-development.env
 fi
+
+export PATH=$PATH:/home/wonderlove/bin
+
+source '/home/wonderlove/lib/azure-cli/az.completion'
