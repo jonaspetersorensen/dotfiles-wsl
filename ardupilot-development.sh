@@ -15,5 +15,12 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-export PATH=/opt/gcc-arm-none-eabi-6-2017-q2-update/bin:$PATH
-export PATH=/mnt/c/dev/equinor/kitchen-ardupilot/ardupilot/Tools/autotest:$PATH
+
+ARDUPILOT_PATH="$HOME/dev/equinor/kitchen-ardupilot/ardupilot"
+
+if [ ${RELEASE_CODENAME} == 'focal' ]; then
+    source "$ARDUPILOT_PATH/Tools/completion/completion.zsh"
+else
+    export PATH=/opt/gcc-arm-none-eabi-6-2017-q2-update/bin:$PATH
+    export PATH="$ARDUPILOT_PATH/Tools/autotest:$PATH"
+fi
