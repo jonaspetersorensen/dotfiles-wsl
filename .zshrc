@@ -166,4 +166,3 @@ fi
 
 export PATH=$PATH:/home/wonderlove/bin
 
-source '/home/wonderlove/lib/azure-cli/az.completion'
