@@ -19,9 +19,9 @@ fi
 ARDUPILOT_PATH="$HOME/dev/equinor/kitchen-ardupilot/ardupilot"
 # Set environment according to name of ubuntu version
 RELEASE_CODENAME="$(lsb_release -c -s)"
-if [ "${RELEASE_CODENAME}" == 'focal' ]; then
+if [ "$RELEASE_CODENAME" == "focal" ]; then
     source "$ARDUPILOT_PATH/Tools/completion/completion.zsh"
 else
-    export PATH=/opt/gcc-arm-none-eabi-6-2017-q2-update/bin:$PATH
+    export PATH="/opt/gcc-arm-none-eabi-6-2017-q2-update/bin:$PATH"
     export PATH="$ARDUPILOT_PATH/Tools/autotest:$PATH"
 fi
