@@ -166,3 +166,8 @@ fi
 
 export PATH=$PATH:/home/wonderlove/bin
 
+# Rust
+if [ -f "$HOME/.cargo/env" ]; then
+    source $HOME/.cargo/env
+fi
+
