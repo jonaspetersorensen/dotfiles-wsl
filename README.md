@@ -119,3 +119,9 @@ Simply copy what you need from `. profile` to `.zprofile` (in case of `zsh`).
 ## Windows terminal is dropping frames when nvidia G-Sync is active
 For long discussion see [terminal git issue 649](https://github.com/microsoft/terminal/issues/649)
 The only way I could fix this in my machine was to add the setting `"experimental.rendering.software": true` in `settings.json`
+
+## `az login` fails on WSL2
+
+WSL2 is a linux VM, currently headless, and this seems to confuse the `az login` functionality resulting in errors like `tcgetpgrp failed: Not a tty`.  
+The alternative option until MS fix this is to use device login, `az login --use-device-code`.
+
