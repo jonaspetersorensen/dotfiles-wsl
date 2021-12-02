@@ -30,7 +30,7 @@ function install::run()
 
 	step="Step 2"
     ui::print::section_start "${step}: Install base utils - In progress..."
-	sudo apt -qq install git wget tar xz-utils gzip p7zip-full unzip recode apt-transport-https jq yq build-essential apache2-utils
+	sudo apt -qq install git wget tar xz-utils gzip p7zip-full unzip recode apt-transport-https jq yq build-essential apache2-utils libssl-dev
 	cp ./ros_env_setup_template.sh "$HOME/ros_env_setup.sh"
 	chmod +x "$HOME/ros_env_setup.sh"
     ui::print::section_end "${step}: Done!"
