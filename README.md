@@ -1,3 +1,5 @@
+ARCHIVED - wsl2 is a proper linux vm and has made most of these notes and settings obsolete. 
+
 # dotfiles-wsl
 My horrible configuration files for Ubuntu on Windows WSL2, and an even worse attempt at creating an installer for mucking it all up again.
 
